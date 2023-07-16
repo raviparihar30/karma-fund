@@ -1,0 +1,24 @@
+[
+  {
+    "title": "Concept Art & Illustrations by Stef Euphoria",
+    "subTitle":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
+    "image": "https://preview.cruip.com/creative/images/blog-01.jpg",
+    "user":"Knut Mayer",
+    "userImage":"https://preview.cruip.com/creative/images/blog-author-01.jpg"
+  },
+  {
+    "title": "Patrick Chen's Branding by Thought & Found Studio",
+    "subTitle":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
+    "image": "https://preview.cruip.com/creative/images/blog-02.jpg",
+    "user":"Samuel Regan",
+    "userImage":"https://preview.cruip.com/creative/images/blog-author-02.jpg"
+  },
+  {
+    "title": "Soma Brewing Branding & Packaging by Quim Martin",
+    "subTitle":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
+    "image": "https://preview.cruip.com/creative/images/blog-03.jpg",
+    "user":"Fabian Centero",
+    "userImage":"https://preview.cruip.com/creative/images/blog-author-03.jpg"
+  }
+ 
+]

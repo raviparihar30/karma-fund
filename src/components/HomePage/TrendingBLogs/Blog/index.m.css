@@ -1,0 +1,20 @@
+.trending-card {
+  width: 250px;
+  height: 250px;
+}
+.trending-card:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+.trending-card img {
+  height: 155px;
+}
+
+.trending-card h4 {
+  font-size: 20px;
+}
+
+.trending-card h5 {
+  font-size: 16px;
+}

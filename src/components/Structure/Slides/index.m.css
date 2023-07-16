@@ -1,0 +1,26 @@
+.slider-arrows {
+  display: flex;
+  justify-content: end;
+  margin-top: 20px;
+}
+
+.slider-arrow {
+  background-color: #f0f0f0;
+  border: none;
+  color: #333;
+  padding: 10px 20px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+.slider-arrows button {
+  font-size: 8px;
+  padding: 18px;
+}
+
+.slider-arrow.prev {
+  border-radius: 5px 0 0 5px;
+}
+
+.slider-arrow.next {
+  border-radius: 0 5px 5px 0;
+}

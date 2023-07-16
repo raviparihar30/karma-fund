@@ -1,0 +1,10 @@
+.blog-card {
+  width: 350px;
+  height: 350px;
+  opacity: 0.6;
+  transition: 0.3s;
+}
+.blog-card:hover {
+  cursor: pointer;
+  opacity: 1;
+}

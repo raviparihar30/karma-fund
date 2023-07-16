@@ -1,0 +1,22 @@
+.member-section .member-inner-section {
+  background-color: rgb(20, 24, 27);
+  height: 250px;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  padding: 24px;
+  align-items: center;
+  rotate: -2deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.member-section .member-inner-section h1 {
+  font-weight: bold;
+  font-size: 48px;
+  color: #fff;
+}
+
+.text-container {
+  margin-top: -7.25rem !important;
+}

@@ -1,0 +1,18 @@
+.banner-text-container {
+  max-width: 600px;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.banner-text-container h1 {
+  font-size: 4.5rem;
+  font-weight: bold;
+}
+
+.banner-text-container h5 {
+  font-weight: normal;
+  line-height: 32px;
+  font-size: 20px;
+}

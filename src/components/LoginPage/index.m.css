@@ -1,0 +1,10 @@
+.register {
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+  padding: 0 0 40px 0;
+}
+.register-container {
+  max-width: 75%;
+  margin: auto;
+  padding: 36px 24px;
+  border-radius: 12px;
+}
