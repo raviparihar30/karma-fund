@@ -12,7 +12,7 @@ const Banner = () => {
           Our landing page template works on all devices, so you only have to
           set it up once, and get beautiful results forever.
         </h5>
-        <div className="d-flex gap-3 my-5 align-items-center">
+        <div className="d-flex gap-3 my-5 align-items-start flex-column flex-md-row">
           <Button
             variant="outline-light"
             className="px-5 py-2 rounded-pill fw-bold"

@@ -42,7 +42,7 @@ const RegisterForm = () => {
         <h2 className="text-center fw-bold h1">
           You've been invited to join us
         </h2>
-        <Form onSubmit={handleSubmit} className="w-50 mx-auto my-3">
+        <Form onSubmit={handleSubmit} className="mx-auto my-3">
           <Form.Group className="mb-3" controlId="formName">
             <Form.Label>Name</Form.Label>
             <Form.Control

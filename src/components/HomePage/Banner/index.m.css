@@ -4,11 +4,35 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  padding: 16px;
+}
+@media only screen and (max-width: 800px) {
+  .banner-text-container {
+    max-width: 450px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .banner-text-container {
+    max-width: 100%;
+  }
 }
 
 .banner-text-container h1 {
   font-size: 4.5rem;
   font-weight: bold;
+}
+
+@media only screen and (max-width: 800px) {
+  .banner-text-container h1 {
+    font-size: 3.0rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .banner-text-container h1 {
+    font-size: 3rem;
+  }
 }
 
 .banner-text-container h5 {

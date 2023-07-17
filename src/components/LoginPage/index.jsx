@@ -33,14 +33,14 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="container my-5 register">
-      <div className="register-container">
+    <div className="container my-5 login">
+      <div className="login-container">
         <Avatar
           src="https://preview.cruip.com/creative/images/join-avatar.jpg"
           className="mx-auto my-2"
         />
         <h2 className="text-center fw-bold h1">Welcome Back</h2>
-        <Form onSubmit={handleSubmit} className="w-50 mx-auto my-3">
+        <Form onSubmit={handleSubmit} className="mx-auto my-3">
           <Form.Group className="mb-3" controlId="formEmail">
             <Form.Label>Email address</Form.Label>
             <Form.Control

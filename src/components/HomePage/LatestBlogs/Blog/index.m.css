@@ -4,6 +4,19 @@
   opacity: 0.6;
   transition: 0.3s;
 }
+
+@media only screen and (max-width: 900px) {
+  .blog-card {
+    width: 250px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .blog-card {
+    width: 200px;
+  }
+}
+
 .blog-card:hover {
   cursor: pointer;
   opacity: 1;

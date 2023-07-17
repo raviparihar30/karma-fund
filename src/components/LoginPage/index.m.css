@@ -1,10 +1,25 @@
-.register {
+.login {
   box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
   padding: 0 0 40px 0;
 }
-.register-container {
+.login-container {
   max-width: 75%;
   margin: auto;
   padding: 36px 24px;
   border-radius: 12px;
+}
+
+@media only screen and (max-width: 800px) {
+  .login-container {
+    max-width: 100%;
+    margin: 0 24px;
+  }
+}
+.login-container form {
+  width: 50%;
+}
+@media only screen and (max-width: 800px) {
+  .login-container form {
+    width: 100%;
+  }
 }
