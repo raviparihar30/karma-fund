@@ -1,6 +1,6 @@
 .blog-card {
   width: 350px;
-  height: 350px;
+  height: 350px !important;
   opacity: 0.6;
   transition: 0.3s;
 }

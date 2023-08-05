@@ -1,6 +1,6 @@
 .trending-card {
   width: 250px;
-  height: 250px;
+  height: 250px !important;
 }
 .trending-card:hover {
   cursor: pointer;
@@ -17,4 +17,14 @@
 
 .trending-card h5 {
   font-size: 16px;
+}
+/* Add ellipsis to the title and display full text on hover */
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  max-width: 100%; /* Adjust as needed */
+  vertical-align: middle;
+  cursor: pointer; /* Show pointer on hover for indicating interactivity */
 }

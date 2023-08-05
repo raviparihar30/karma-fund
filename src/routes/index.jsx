@@ -5,10 +5,12 @@ import LoginPage from "../pages/LoginPage";
 import RegisterPage from "../pages/RegisterPage";
 import AboutPage from "../pages/AboutPage";
 import ContactPage from "../pages/ContactPage";
+import BlogPage from "../pages/BlogPage";
 
 export const AllRoutes = () => (
   <Routes>
     <Route path="/" element={<HomePage />} />
+    <Route path="/blog/:blogId" element={<BlogPage />} />
     <Route path="/about" element={<AboutPage />} />
     <Route path="/contact" element={<ContactPage />} />
     <Route path="/register" element={<RegisterPage />} />
