@@ -11,10 +11,28 @@
     scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+@media only screen and (max-width: 700px) {
+  .member-section .member-inner-section {
+    grid-template-columns: 100%;
+  }
+}
+
+
 .member-section .member-inner-section h1 {
   font-weight: bold;
   font-size: 48px;
   color: #fff;
+}
+@media only screen and (max-width: 800px) {
+  .member-section .member-inner-section h1 {
+    font-size: 32px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .member-section .member-inner-section h1 {
+    font-size: 26px;
+  }
 }
 
 .text-container {
