@@ -1,13 +1,17 @@
 /* ReadMorePage.css */
 .read-more-page {
-  max-width: 90%;
+  max-width: 50%;
   margin: 32px auto;
   padding: 20px;
   font-family: Arial, sans-serif;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   min-height: 300px;
 }
-
+@media only screen and (max-width: 700px) {
+  .read-more-page {
+    max-width: 90%;
+  }
+}
 .blog-title {
   font-size: 28px;
   font-weight: bold;
