@@ -10,7 +10,7 @@ const BlogPage = () => {
   const fetchBlogPost = useCallback(async () => {
     try {
       const response = await fetch(
-        `https://4f1c-182-70-202-68.ngrok-free.app/api/posts/${blogId}`
+        `https://dcdc-27-57-156-44.ngrok-free.app/api/posts/${blogId}`
       );
       if (response.ok) {
         const { data } = await response.json();

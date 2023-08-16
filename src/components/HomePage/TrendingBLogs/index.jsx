@@ -10,7 +10,7 @@ const TrendingBlogs = () => {
   const [latestPosts, setLatestPosts] = useState([]);
   const fetchLatestPosts = async () => {
     const response = await fetch(
-      "https://4f1c-182-70-202-68.ngrok-free.app/api/posts/"
+      "https://dcdc-27-57-156-44.ngrok-free.app/api/posts/"
     );
     if (response.ok) {
       const { data } = await response.json();

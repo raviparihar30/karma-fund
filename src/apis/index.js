@@ -1,1 +1,2 @@
-export const imageUrl = "https://4f1c-182-70-202-68.ngrok-free.app/uploads/";
+export const imageUrl = "https://dcdc-27-57-156-44.ngrok-free.app/uploads/";
+// https://dcdc-27-57-156-44.ngrok-free.app
