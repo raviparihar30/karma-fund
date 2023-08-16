@@ -69,7 +69,7 @@ const Footer = () => (
         <div className="text-sm text-muted fw-semibold py-1">
           Copyright © {new Date().getFullYear()}{" "}
           <a href="/" className="text-muted">
-            Your Brand
+            Karma Returns
           </a>
           .
         </div>
