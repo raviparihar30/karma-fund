@@ -55,7 +55,7 @@ const Footer = () => (
     </div>
     <div>
       <Typography variant="caption" className="text-muted mt-3">
-        Some of our posts may contain affiliate links to partner brands. We earn
+        Some of our post may contain affiliate links to partner brands. We earn
         a small commission if you click the link and make a purchase. There is
         no extra cost to you, so it's just a nice way to help support the site.
         All images, videos, and other content posted on the site is attributed
