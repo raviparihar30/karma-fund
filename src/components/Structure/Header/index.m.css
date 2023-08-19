@@ -1,9 +1,22 @@
-a {
+/* Apply the same styles to dropdown links as regular links */
+.navbar-nav .nav-link,
+.navbar-nav .nav-item.dropdown:hover .nav-link {
   color: #fff;
   text-decoration: none;
   background-color: transparent;
+  font-weight: bold;
 }
-a:hover {
-  color: #fff;
+
+/* Apply styles to dropdown menu items */
+.navbar-nav .dropdown-menu .dropdown-item {
+  color: #000; /* Change to a color that's visible against the background */
+  background-color: transparent;
+  font-weight: bold;
+}
+
+/* Apply styles to dropdown menu items on hover */
+.navbar-nav .dropdown-menu .dropdown-item:hover {
+  color: #000; /* Change to a color that's visible against the background */
+  background-color: transparent;
   text-decoration: underline;
 }

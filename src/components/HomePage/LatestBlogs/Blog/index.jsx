@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import dayjs from "dayjs"; // Import dayjs
 import relativeTime from "dayjs/plugin/relativeTime"; // Import the relativeTime plugin
 import "./index.m.css";
+import { OverlayTrigger, Tooltip } from "react-bootstrap";
 
 // Extend dayjs with the relativeTime plugin
 dayjs.extend(relativeTime);
@@ -20,8 +21,6 @@ const Blog = ({ title, subTitle, image, author, updatedAt, id, likes }) => {
       </div>
       <div className="blog-content">
         <div className="blog-text">
-          <h3 className="blog-title-main">{title}</h3>
-          <p className="blog-subtitle-main">{subTitle}</p>
           <div className="blog-author-date">
             <div className="blog-author-date-inner">
               <div className="blog-author">{"Mr. Mahendra"}</div>
@@ -29,6 +28,10 @@ const Blog = ({ title, subTitle, image, author, updatedAt, id, likes }) => {
             </div>
             <div className="blog-like">❤️ {likes}</div>
           </div>
+          <OverlayTrigger placement="top" overlay={<Tooltip>{title}</Tooltip>}>
+            <h3 className="blog-title-main mt-3">{title}</h3>
+          </OverlayTrigger>
+          <p className="blog-subtitle-main">{subTitle}</p>
         </div>
       </div>
     </div>
