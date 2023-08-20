@@ -1,15 +1,25 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import MainLayout from "../../layouts/MainLayout";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useContext, useEffect, useState } from "react";
 import style from "./index.m.css";
+import { UserContext } from "../../context/user";
 
 const BlogPage = () => {
   const { blogId } = useParams();
   const [blog, setBlog] = useState(null);
+  const { loggedInUser } = useContext(UserContext);
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!loggedInUser && blogId) {
+      navigate(`/signin?blog=${blogId}`);
+    }
+  }, [loggedInUser, blogId]);
 
   const fetchBlogPost = useCallback(async () => {
     try {
-      const response = await fetch(`http://localhost:8000/api/posts/${blogId}`);
+      const response = await fetch(
+        `https://dcdc-27-57-156-44.ngrok-free.app/api/posts/${blogId}`
+      );
       if (response.ok) {
         const { data } = await response.json();
         setBlog(data ?? {});

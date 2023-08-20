@@ -1,35 +1,33 @@
-import React, { useState } from "react";
+import React from "react";
 import { Form, Button } from "react-bootstrap";
-import "./index.m.css";
 import { Avatar } from "@mui/material";
+import { postRequest } from "../../apis";
+import Swal from "sweetalert2";
+import "./index.m.css";
+import { useNavigate } from "react-router-dom";
+import { useForm, Controller } from "react-hook-form";
 
 const RegisterForm = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    password: "",
-    userName: "",
-  });
+  const navigate = useNavigate();
+  const {
+    handleSubmit,
+    control,
+    formState: { errors },
+  } = useForm();
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Handle form submission logic here, e.g., send the data to the server
-    console.log(formData);
-    // Reset the form after submission
-    setFormData({
-      name: "",
-      email: "",
-      password: "",
-      userName: "",
-    });
+  const onSubmit = async (formData) => {
+    try {
+      // Call the register API
+      const response = await postRequest("api/users/register", formData);
+      // console.log("response  => ", response);
+      if (response?.success) {
+        // localStorage.setItem("token", response?.data);
+        navigate("/login");
+      }
+    } catch (error) {
+      // Handle error
+      console.error("Registration failed:", error?.response?.data?.message);
+    }
   };
 
   return (
@@ -42,49 +40,112 @@ const RegisterForm = () => {
         <h2 className="text-center fw-bold h1">
           You've been invited to join us
         </h2>
-        <Form onSubmit={handleSubmit} className="mx-auto my-3">
+        <Form onSubmit={handleSubmit(onSubmit)} className="mx-auto my-3">
           <Form.Group className="mb-3" controlId="formName">
             <Form.Label>Name</Form.Label>
-            <Form.Control
-              type="text"
+            <Controller
               name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
+              control={control}
+              rules={{ required: "Name is required" }}
+              render={({ field }) => (
+                <Form.Control
+                  type="text"
+                  {...field}
+                  isInvalid={!!errors.name}
+                />
+              )}
             />
+            <Form.Control.Feedback type="invalid">
+              {errors.name?.message}
+            </Form.Control.Feedback>
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formEmail">
             <Form.Label>Email address</Form.Label>
-            <Form.Control
-              type="email"
+            <Controller
               name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
+              control={control}
+              rules={{
+                required: "Email is required",
+                pattern: {
+                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                  message: "Enter a valid email address",
+                },
+              }}
+              render={({ field }) => (
+                <Form.Control
+                  type="email"
+                  {...field}
+                  isInvalid={!!errors.email}
+                />
+              )}
             />
+            <Form.Control.Feedback type="invalid">
+              {errors.email?.message}
+            </Form.Control.Feedback>
+          </Form.Group>
+
+          <Form.Group className="mb-3" controlId="formMobile">
+            <Form.Label>Mobile Number</Form.Label>
+            <Controller
+              name="mobileNo"
+              control={control}
+              rules={{
+                required: "Mobile number is required",
+                pattern: {
+                  value: /^[6-9]\d{9}$/,
+                  message: "Enter a valid mobile number",
+                },
+              }}
+              render={({ field }) => (
+                <Form.Control
+                  type="text"
+                  {...field}
+                  isInvalid={!!errors.mobileNo}
+                />
+              )}
+            />
+            <Form.Control.Feedback type="invalid">
+              {errors.mobileNo?.message}
+            </Form.Control.Feedback>
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formPassword">
             <Form.Label>Password</Form.Label>
-            <Form.Control
-              type="password"
+            <Controller
               name="password"
-              value={formData.password}
-              onChange={handleChange}
-              required
+              control={control}
+              rules={{ required: "Password is required" }}
+              render={({ field }) => (
+                <Form.Control
+                  type="password"
+                  {...field}
+                  isInvalid={!!errors.password}
+                />
+              )}
             />
+            <Form.Control.Feedback type="invalid">
+              {errors.password?.message}
+            </Form.Control.Feedback>
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formUserName">
-            <Form.Label>userName</Form.Label>
-            <Form.Control
-              type="text"
+            <Form.Label>Username</Form.Label>
+            <Controller
               name="userName"
-              value={formData.userName}
-              onChange={handleChange}
-              required
+              control={control}
+              rules={{ required: "Username is required" }}
+              render={({ field }) => (
+                <Form.Control
+                  type="text"
+                  {...field}
+                  isInvalid={!!errors.userName}
+                />
+              )}
             />
+            <Form.Control.Feedback type="invalid">
+              {errors.userName?.message}
+            </Form.Control.Feedback>
           </Form.Group>
 
           <Button
@@ -92,7 +153,7 @@ const RegisterForm = () => {
             type="submit"
             className="my-3 d-flex text-center justify-content-center w-50 mx-auto"
           >
-            join
+            Join
           </Button>
         </Form>
       </div>

@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { Nav, Navbar, Button, NavDropdown } from "react-bootstrap";
+import React, { useContext, useEffect, useState } from "react";
+import { Nav, Navbar, NavDropdown, Button, Dropdown } from "react-bootstrap";
+import { Avatar } from "@mui/material";
 import "./index.m.css";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "../../../context/user";
 
 export default function Header({ padding = "px-5 py-4" }) {
-  const navigate = useNavigate();
   const [navbarBgColor, setNavbarBgColor] = useState("");
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
-
+  const { loggedInUser, setLoggedInUser } = useContext(UserContext);
   const handleNavbarToggle = () => {
     setIsNavbarOpen(!isNavbarOpen);
   };
@@ -52,8 +53,8 @@ export default function Header({ padding = "px-5 py-4" }) {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
-          <div className="d-flex">
-            <Nav className="ml-auto gap-5 fw-bold">
+          <div className="d-flex align-items-center">
+            <Nav className="ml-auto gap-3 fw-bold align-items-center">
               <Nav.Link href="/">Home</Nav.Link>
               <NavDropdown title="Company" id="company-dropdown">
                 <NavDropdown.Item href="/about">About</NavDropdown.Item>
@@ -61,16 +62,41 @@ export default function Header({ padding = "px-5 py-4" }) {
                 {/* Add more submenu items here if needed */}
               </NavDropdown>
               <Nav.Link href="/blogs">Blogs</Nav.Link>
-              <Nav.Link href="/signin" className="text-light">
-                Sign In
-              </Nav.Link>
-              {/* <Button
-                variant="outline-light"
-                className="px-5 rounded-pill fw-bold"
-                onClick={() => navigate("/register")}
-              >
-                Join The Community
-              </Button> */}
+              {loggedInUser ? (
+                <Dropdown align="end">
+                  <Dropdown.Toggle
+                    variant="link"
+                    className="text-light d-flex align-items-center gap-2"
+                    id="user-dropdown-toggle"
+                  >
+                    <Avatar
+                      src={loggedInUser.avatarUrl}
+                      alt={loggedInUser.name}
+                      className="mr-2"
+                    />
+                    {loggedInUser.name &&
+                      capitalizeFirstLetter(loggedInUser.name)}
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu>
+                    <Dropdown.Item href="#">My Account</Dropdown.Item>
+                    <Dropdown.Divider />
+                    <Dropdown.Item
+                      href="#"
+                      onClick={() => {
+                        localStorage.removeItem("rn-user");
+                        localStorage.removeItem("token");
+                        setLoggedInUser(null);
+                      }}
+                    >
+                      Log Out
+                    </Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+              ) : (
+                <Nav.Link href="/signin" className="text-light">
+                  Sign In
+                </Nav.Link>
+              )}
             </Nav>
           </div>
         </Navbar.Collapse>
@@ -78,3 +104,8 @@ export default function Header({ padding = "px-5 py-4" }) {
     </Navbar>
   );
 }
+
+// Function to capitalize the first letter of a string
+const capitalizeFirstLetter = (str) => {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+};

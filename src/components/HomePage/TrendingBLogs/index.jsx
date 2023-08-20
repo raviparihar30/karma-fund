@@ -9,7 +9,9 @@ import { imageUrl } from "../../../apis";
 const TrendingBlogs = () => {
   const [latestPosts, setLatestPosts] = useState([]);
   const fetchLatestPosts = async () => {
-    const response = await fetch("http://localhost:8000/api/posts/");
+    const response = await fetch(
+      "https://dcdc-27-57-156-44.ngrok-free.app/api/posts/"
+    );
     if (response.ok) {
       const { data } = await response.json();
       setLatestPosts(

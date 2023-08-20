@@ -1,7 +1,9 @@
 import { Button, NavLink } from "react-bootstrap";
 import "./index.m.css";
+import { useNavigate } from "react-router-dom";
 
 const Banner = () => {
+  const navigate = useNavigate();
   return (
     <div className="container">
       <div className="banner-text-container">
@@ -16,6 +18,7 @@ const Banner = () => {
           <Button
             variant="outline-light"
             className="px-5 py-2 rounded-pill fw-bold"
+            onClick={() => navigate("/register")}
           >
             Join The Community
           </Button>

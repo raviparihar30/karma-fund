@@ -1,8 +1,11 @@
 import { Button } from "react-bootstrap";
 import "./index.m.css";
 import SpiralIcon from "../../../assets/icons/spiral";
+import { useNavigate } from "react-router-dom";
 
 const Member = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="my-5 member-section">
       <div className="container member-inner-section px-5">
@@ -15,6 +18,7 @@ const Member = () => {
         <Button
           variant="primary"
           className="px-3 py-2 rounded-pill fw-bold d-flex mx-auto"
+          onClick={() => navigate("/register")}
         >
           Join The Community
         </Button>
