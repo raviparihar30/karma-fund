@@ -3,6 +3,7 @@ import MainLayout from "../../layouts/MainLayout";
 import { useCallback, useContext, useEffect, useState } from "react";
 import style from "./index.m.css";
 import { UserContext } from "../../context/user";
+import { BASE_URL } from "../../apis";
 
 const BlogPage = () => {
   const { blogId } = useParams();
@@ -17,9 +18,7 @@ const BlogPage = () => {
 
   const fetchBlogPost = useCallback(async () => {
     try {
-      const response = await fetch(
-        `https://dcdc-27-57-156-44.ngrok-free.app/api/posts/${blogId}`
-      );
+      const response = await fetch(`${BASE_URL}/api/posts/${blogId}`);
       if (response.ok) {
         const { data } = await response.json();
         setBlog(data ?? {});

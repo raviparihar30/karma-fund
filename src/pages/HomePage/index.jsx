@@ -13,8 +13,8 @@ const HomePage = () => {
         <Banner />
       </div>
       <LatestBlogs />
-      <TrendingBlogs />
-      <Blogs />
+      {/* <TrendingBlogs />
+      <Blogs /> */}
       <Member />
     </MainLayout>
   );

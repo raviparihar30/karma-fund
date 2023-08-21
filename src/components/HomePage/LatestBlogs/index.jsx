@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Button, Col, Row } from "react-bootstrap";
 import Blog from "./Blog";
-import { imageUrl } from "../../../apis";
+import { BASE_URL, imageUrl } from "../../../apis";
 import { Link, useNavigate } from "react-router-dom";
 
 const LatestBlogs = () => {
@@ -9,9 +9,7 @@ const LatestBlogs = () => {
   const navigate = useNavigate();
 
   const fetchLatestPosts = async () => {
-    const response = await fetch(
-      "https://dcdc-27-57-156-44.ngrok-free.app/api/posts/"
-    );
+    const response = await fetch(`${BASE_URL}/api/posts/`);
     if (response.ok) {
       const { data } = await response.json();
       console.log("data  => ", data);
