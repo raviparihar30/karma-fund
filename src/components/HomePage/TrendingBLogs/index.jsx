@@ -4,14 +4,12 @@ import { Button } from "react-bootstrap";
 import Blog from "./Blog";
 import MainSlider from "../../Structure/Slides";
 import { useEffect, useState } from "react";
-import { imageUrl } from "../../../apis";
+import { BASE_URL, imageUrl } from "../../../apis";
 
 const TrendingBlogs = () => {
   const [latestPosts, setLatestPosts] = useState([]);
   const fetchLatestPosts = async () => {
-    const response = await fetch(
-      "https://dcdc-27-57-156-44.ngrok-free.app/api/posts/"
-    );
+    const response = await fetch(`${BASE_URL}/api/posts/`);
     if (response.ok) {
       const { data } = await response.json();
       setLatestPosts(
