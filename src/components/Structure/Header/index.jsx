@@ -85,7 +85,7 @@ export default function Header({ padding = "px-5 py-4" }) {
                       onClick={() => {
                         localStorage.removeItem("rn-user");
                         localStorage.removeItem("token");
-                        setLoggedInUser(null);
+                        setLoggedInUser(false);
                       }}
                     >
                       Log Out

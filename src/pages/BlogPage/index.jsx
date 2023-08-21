@@ -3,15 +3,16 @@ import MainLayout from "../../layouts/MainLayout";
 import { useCallback, useContext, useEffect, useState } from "react";
 import style from "./index.m.css";
 import { UserContext } from "../../context/user";
-import { BASE_URL } from "../../apis";
+import { BASE_URL, postRequest } from "../../apis";
 
 const BlogPage = () => {
   const { blogId } = useParams();
   const [blog, setBlog] = useState(null);
   const { loggedInUser } = useContext(UserContext);
   const navigate = useNavigate();
+
   useEffect(() => {
-    if (!loggedInUser && blogId) {
+    if (loggedInUser != null && !loggedInUser && blogId) {
       navigate(`/signin?blog=${blogId}`);
     }
   }, [loggedInUser, blogId]);
@@ -19,6 +20,9 @@ const BlogPage = () => {
   const fetchBlogPost = useCallback(async () => {
     try {
       const response = await fetch(`${BASE_URL}/api/posts/${blogId}`);
+      const checkView = await postRequest(
+        `${BASE_URL}/api/posts/${blogId}/increase-views`
+      );
       if (response.ok) {
         const { data } = await response.json();
         setBlog(data ?? {});

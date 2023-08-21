@@ -9,7 +9,7 @@ const UserContextProvider = ({ children }) => {
     const storedUser = localStorage.getItem("rn-user");
     if (storedUser) {
       const parsedUser = JSON.parse(storedUser);
-      setLoggedInUser(parsedUser);
+      setLoggedInUser(parsedUser ?? false);
     }
   }, []);
 
