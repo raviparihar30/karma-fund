@@ -3,6 +3,7 @@ import { Nav, Navbar, NavDropdown, Button, Dropdown } from "react-bootstrap";
 import { Avatar } from "@mui/material";
 import "./index.m.css"; // Import your custom CSS file
 import { UserContext } from "../../../context/user";
+import { Link } from "react-scroll";
 
 export default function Header({ padding = "px-5 py-4", hide }) {
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
@@ -45,11 +46,11 @@ export default function Header({ padding = "px-5 py-4", hide }) {
 
   return (
     <Navbar
-      bg={scrollHeaderBg ? "primary" : !hide ? "transparent" : "info"}
+      bg={!hide ? "transparent" : "dark"}
       variant="dark"
       expand="lg"
       onToggle={handleNavbarToggle}
-      className={`w-100 ${padding} d-flex justify-content-between align-items-center z-1 position-fixed header-wrapper ${
+      className={`w-100 ${padding} d-flex justify-content-between align-items-center z-1 header-wrapper ${
         scrollHeaderBg ? "scroll-header-bg" : ""
       }`}
     >
@@ -68,11 +69,15 @@ export default function Header({ padding = "px-5 py-4", hide }) {
             <Nav className="ml-auto gap-3 fw-bold align-items-center">
               <Nav.Link href="/">Home</Nav.Link>
               <NavDropdown title="Company" id="company-dropdown">
-                <NavDropdown.Item href="/about">About</NavDropdown.Item>
+                <Link to="aboutSection" smooth={true} duration={500}>
+                  <NavDropdown.Item>About</NavDropdown.Item>
+                </Link>
                 <NavDropdown.Item href="/contact">Contact</NavDropdown.Item>
                 {/* Add more submenu items here if needed */}
               </NavDropdown>
-              <Nav.Link href="/blogs">Blogs</Nav.Link>
+              <Link to="blogsSection" smooth={true} duration={500} offset={-70}>
+                <Nav.Link href="/blogs">Blogs</Nav.Link>
+              </Link>
               {loggedInUser ? (
                 <Dropdown align="end">
                   <Dropdown.Toggle

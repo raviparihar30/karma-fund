@@ -23,7 +23,7 @@ const Banner = () => {
         options={{
           fullScreen: false,
           background: {
-            image: " linear-gradient(19deg, #21D4FD 0%, #B721FF 100%)",
+            image: " linear-gradient(19deg, #000 0%, #000 100%)",
           },
           particles: {
             number: { value: 10, density: { enable: true, value_area: 600 } },

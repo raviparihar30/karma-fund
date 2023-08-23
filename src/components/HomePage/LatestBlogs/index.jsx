@@ -3,6 +3,7 @@ import { Button, Col, Row } from "react-bootstrap";
 import Blog from "./Blog";
 import { BASE_URL, imageUrl } from "../../../apis";
 import { Link, useNavigate } from "react-router-dom";
+import { Fade, Slide } from "react-awesome-reveal";
 
 const LatestBlogs = () => {
   const [latestPosts, setLatestPosts] = useState([]);
@@ -33,17 +34,21 @@ const LatestBlogs = () => {
   useEffect(() => {
     fetchLatestPosts();
   }, []);
-  console.log("latestPosts  => ", latestPosts);
+
   return (
     <div className="container my-5 blog-container">
-      <h1 className="mb-5">Latest Blogs</h1>
-      <Row className="my-5 bg-light py-5 rounded">
-        {latestPosts.map((blog, index) => (
-          <Col key={index} md={6} className="mb-4">
-            <Blog {...blog} />
-          </Col>
-        ))}
-      </Row>
+      <Fade delay={1e3} cascade damping={1e-1}>
+        <h1 className="mb-5 text-danger fw-bold">Latest Blogs</h1>
+      </Fade>
+      <Slide>
+        <Row className="my-5 bg-light py-5 rounded">
+          {latestPosts.map((blog, index) => (
+            <Col key={index} md={6} className="mb-4">
+              <Blog {...blog} />
+            </Col>
+          ))}
+        </Row>
+      </Slide>
       <Button
         variant="outline-primary"
         className="px-5 py-2 rounded-pill fw-bold d-flex mx-auto"
