@@ -14,6 +14,8 @@ const BlogPage = () => {
   useEffect(() => {
     if (loggedInUser != null && !loggedInUser && blogId) {
       navigate(`/signin?blog=${blogId}`);
+    } else {
+      fetchBlogPost();
     }
   }, [loggedInUser, blogId]);
 
@@ -32,13 +34,9 @@ const BlogPage = () => {
     }
   }, [blogId]);
 
-  useEffect(() => {
-    fetchBlogPost();
-  }, [fetchBlogPost]);
-
   return (
     <MainLayout>
-      <div className={"read-more-page"}>
+      <div className={"read-more-page mt-5"}>
         {!blog ? (
           "Loading..."
         ) : (

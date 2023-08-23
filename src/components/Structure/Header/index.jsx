@@ -1,14 +1,14 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Nav, Navbar, NavDropdown, Button, Dropdown } from "react-bootstrap";
 import { Avatar } from "@mui/material";
-import "./index.m.css";
-import { useNavigate } from "react-router-dom";
+import "./index.m.css"; // Import your custom CSS file
 import { UserContext } from "../../../context/user";
 
-export default function Header({ padding = "px-5 py-4" }) {
-  const [navbarBgColor, setNavbarBgColor] = useState("");
+export default function Header({ padding = "px-5 py-4", hide }) {
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
   const { loggedInUser, setLoggedInUser } = useContext(UserContext);
+  const [scrollHeaderBg, setScrollHeaderBg] = useState(false);
+
   const handleNavbarToggle = () => {
     setIsNavbarOpen(!isNavbarOpen);
   };
@@ -16,13 +16,9 @@ export default function Header({ padding = "px-5 py-4" }) {
   useEffect(() => {
     const handleResize = () => {
       const { innerWidth } = window;
-      if (innerWidth < 576) {
-        setNavbarBgColor("dark");
-      } else if (innerWidth < 992) {
-        setNavbarBgColor("dark");
-      } else {
-        setNavbarBgColor("transparent");
-      }
+      const navbarBgColor =
+        innerWidth < 576 || innerWidth < 992 ? "dark" : "transparent";
+      setScrollHeaderBg(navbarBgColor === "dark");
     };
 
     handleResize();
@@ -33,25 +29,40 @@ export default function Header({ padding = "px-5 py-4" }) {
     };
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const isScrolled = scrollY > 100;
+      setScrollHeaderBg(isScrolled);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <Navbar
-      bg={
-        padding !== "px-5 py-4"
-          ? isNavbarOpen
-            ? navbarBgColor
-            : "bg-transparent"
-          : "dark"
-      }
+      bg={scrollHeaderBg ? "primary" : !hide ? "transparent" : "info"}
       variant="dark"
       expand="lg"
       onToggle={handleNavbarToggle}
-      className={`w-100 ${padding} d-flex justify-content-between align-items-center z-1`}
+      className={`w-100 ${padding} d-flex justify-content-between align-items-center z-1 position-fixed header-wrapper ${
+        scrollHeaderBg ? "scroll-header-bg" : ""
+      }`}
     >
       <div className="container">
-        <Navbar.Brand href="/" className="fw-bold">
+        <Navbar.Brand href="/" className="fw-bold text-center">
           Karma Returns
+          <br />
+          <small className="logo-subtext">
+            MARKET NEUTRAL DIGITALASSETS FUND
+          </small>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
+
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
           <div className="d-flex align-items-center">
             <Nav className="ml-auto gap-3 fw-bold align-items-center">

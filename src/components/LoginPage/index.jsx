@@ -40,7 +40,7 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="container my-5 login">
+    <div className="container py-5 login">
       <div className="login-container">
         <Avatar
           src="https://preview.cruip.com/creative/images/join-avatar.jpg"
