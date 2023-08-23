@@ -4,8 +4,8 @@ import PageNotFoundPage from "../pages/PageNotFoundPage";
 import LoginPage from "../pages/LoginPage";
 import RegisterPage from "../pages/RegisterPage";
 import AboutPage from "../pages/AboutPage";
-import ContactPage from "../pages/ContactPage";
 import BlogPage from "../pages/BlogPage";
+import ContactPage from "../pages/ContactPage";
 
 export const AllRoutes = () => (
   <Routes>
