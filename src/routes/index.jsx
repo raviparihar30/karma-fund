@@ -10,11 +10,11 @@ import ContactPage from "../pages/ContactPage";
 export const AllRoutes = () => (
   <Routes>
     <Route path="/" element={<HomePage />} />
-    <Route path="/blog/:blogId" element={<BlogPage />} />
     <Route path="/about" element={<AboutPage />} />
     <Route path="/contact" element={<ContactPage />} />
     <Route path="/register" element={<RegisterPage />} />
     <Route path="/signin" element={<LoginPage />} />
+    <Route path="/blog/:blogId" element={<BlogPage />} />
     <Route path="*" element={<PageNotFoundPage />} />
   </Routes>
 );
