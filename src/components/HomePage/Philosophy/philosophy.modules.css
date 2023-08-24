@@ -1,0 +1,99 @@
+/* philosophy.modules.css */
+.philosophy-section {
+  padding: 80px 0;
+}
+
+.dark-background {
+  background-image: linear-gradient(to right, #141e30, #5c7490);
+  color: #fff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.philosophy-content {
+  display: flex;
+  flex-direction: row; /* Side by side on larger screens */
+  align-items: stretch;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+@media (max-width: 878px) {
+  .philosophy-content {
+    flex-direction: column; /* Stack in reverse order */
+  }
+}
+
+.philosophy-content li {
+  margin-bottom: 24px;
+}
+
+p {
+  font-size: 14px;
+}
+
+.philosophy-part {
+  flex: 1;
+  /* background-color: #fff;
+  border: 1px solid #e1e1e1; */
+  /* border-radius: 8px; */
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+  padding: 30px;
+  margin: 10px; /* Add some margin for spacing */
+  transition: transform 0.3s ease;
+}
+
+.philosophy-part:hover {
+  transform: translateY(-5px);
+}
+
+.philosophy-part h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.philosophy-content ul {
+  list-style: none; /* Remove default list styles */
+  padding-left: 0; /* Remove default padding */
+}
+
+.philosophy-content li {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #ddd; /* Lighter text color for better contrast */
+  position: relative; /* Position relative for custom icon */
+  padding-left: 35px; /* Add padding for the custom icon */
+}
+
+.philosophy-content li::before {
+  content: "\2713"; /* Custom checkmark icon */
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #1abc9c; /* Checkmark color */
+  font-size: 20px; /* Checkmark size */
+}
+.part-squares {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.part-square {
+  background: linear-gradient(to bottom, #333, #000);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  color: #fff; /* Text color is white for better contrast */
+  transition: transform 0.3s ease;
+}
+
+.part-square:hover {
+  transform: translateY(-5px);
+}

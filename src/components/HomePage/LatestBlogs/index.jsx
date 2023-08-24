@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Button, Col, Row } from "react-bootstrap";
 import Blog from "./Blog";
 import { BASE_URL, imageUrl } from "../../../apis";
-import { Link, useNavigate } from "react-router-dom";
-import { Fade, Slide } from "react-awesome-reveal";
+import { useNavigate } from "react-router-dom";
+import { Fade, Reveal, Slide } from "react-awesome-reveal";
 
 const LatestBlogs = () => {
   const [latestPosts, setLatestPosts] = useState([]);
@@ -37,18 +37,20 @@ const LatestBlogs = () => {
 
   return (
     <div className="container my-5 blog-container">
-      <Fade delay={1e3} cascade damping={1e-1}>
+      <Fade delay={10} cascade damping={1e-1}>
         <h1 className="mb-5 text-danger fw-bold">Latest Blogs</h1>
       </Fade>
-      <Slide>
-        <Row className="my-5 bg-light py-5 rounded">
-          {latestPosts.map((blog, index) => (
-            <Col key={index} md={6} className="mb-4">
+
+      <Row className="my-5 bg-light py-5 rounded">
+        {latestPosts.map((blog, index) => (
+          <Col key={index} md={6} className="mb-4">
+            <Reveal className="fade-in" delay={index * 1 + 200} triggerOnce>
               <Blog {...blog} />
-            </Col>
-          ))}
-        </Row>
-      </Slide>
+            </Reveal>
+          </Col>
+        ))}
+      </Row>
+
       <Button
         variant="outline-primary"
         className="px-5 py-2 rounded-pill fw-bold d-flex mx-auto"

@@ -6,6 +6,8 @@ import MainLayout from "../../layouts/MainLayout";
 import "./index.m.css";
 import { Element } from "react-scroll";
 import About from "../../components/HomePage/About";
+import Philosophy from "../../components/HomePage/Philosophy";
+import WhyUs from "../../components/HomePage/WhyUs";
 
 const HomePage = () => {
   const blogsRef = useRef(null);
@@ -26,6 +28,10 @@ const HomePage = () => {
       <Element name="aboutSection">
         <About />
       </Element>
+      <Element name="philosophySection">
+        <Philosophy />
+      </Element>
+      <WhyUs />
     </MainLayout>
   );
 };

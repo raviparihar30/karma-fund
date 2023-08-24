@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Nav, Navbar, NavDropdown, Button, Dropdown } from "react-bootstrap";
+import { Nav, Navbar, NavDropdown, Dropdown } from "react-bootstrap";
 import { Avatar } from "@mui/material";
 import "./index.m.css"; // Import your custom CSS file
 import { UserContext } from "../../../context/user";
@@ -71,6 +71,9 @@ export default function Header({ padding = "px-5 py-4", hide }) {
               <NavDropdown title="Company" id="company-dropdown">
                 <Link to="aboutSection" smooth={true} duration={500}>
                   <NavDropdown.Item>About</NavDropdown.Item>
+                </Link>
+                <Link to="philosophySection" smooth={true} duration={500}>
+                  <NavDropdown.Item>Philosophy</NavDropdown.Item>
                 </Link>
                 <NavDropdown.Item href="/contact">Contact</NavDropdown.Item>
                 {/* Add more submenu items here if needed */}
