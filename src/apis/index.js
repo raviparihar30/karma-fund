@@ -1,5 +1,6 @@
 // http://ec2-3-109-151-193.ap-south-1.compute.amazonaws.com:8000
 // api.js
+
 import axios from "axios";
 
 export const BASE_URL =
