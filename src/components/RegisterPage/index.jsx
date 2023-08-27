@@ -2,7 +2,6 @@ import React from "react";
 import { Form, Button } from "react-bootstrap";
 import { Avatar } from "@mui/material";
 import { postRequest } from "../../apis";
-import Swal from "sweetalert2";
 import "./index.m.css";
 import { useNavigate } from "react-router-dom";
 import { useForm, Controller } from "react-hook-form";

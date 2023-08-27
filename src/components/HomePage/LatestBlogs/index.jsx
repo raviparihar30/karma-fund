@@ -3,7 +3,7 @@ import { Button, Col, Row } from "react-bootstrap";
 import Blog from "./Blog";
 import { BASE_URL, imageUrl } from "../../../apis";
 import { useNavigate } from "react-router-dom";
-import { Fade, Reveal, Slide } from "react-awesome-reveal";
+import { Fade, Reveal } from "react-awesome-reveal";
 
 const LatestBlogs = () => {
   const [latestPosts, setLatestPosts] = useState([]);

@@ -37,3 +37,10 @@
   font-size: 14px; /* Adjust the font size as needed */
   color: #fff; /* Adjust the color as needed */
 }
+
+@media (max-width: 878px) {
+  .logo-subtext {
+    font-size: 10px; /* Adjust the font size as needed */
+    color: #fff; /* Adjust the color as needed */
+  }
+}

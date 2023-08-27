@@ -7,8 +7,15 @@
 .whyus-points {
   display: flex;
   justify-content: space-between;
+  flex-direction: row;
   gap: 40px;
   margin-top: 40px;
+}
+
+@media (max-width: 878px) {
+  .whyus-points {
+    flex-direction: column; /* Stack in reverse order */
+  }
 }
 .icon {
   font-size: 36px;
