@@ -9,6 +9,7 @@ export default function Header({ padding = "px-5 py-4", hide }) {
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
   const { loggedInUser, setLoggedInUser } = useContext(UserContext);
   const [scrollHeaderBg, setScrollHeaderBg] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   const handleNavbarToggle = () => {
     setIsNavbarOpen(!isNavbarOpen);
@@ -17,8 +18,8 @@ export default function Header({ padding = "px-5 py-4", hide }) {
   useEffect(() => {
     const handleResize = () => {
       const { innerWidth } = window;
-      const navbarBgColor =
-        innerWidth < 576 || innerWidth < 992 ? "dark" : "transparent";
+      setIsMobile(innerWidth < 576 || innerWidth < 992);
+      const navbarBgColor = isMobile ? "secondary" : "transparent";
       setScrollHeaderBg(navbarBgColor === "dark");
     };
 
@@ -28,7 +29,7 @@ export default function Header({ padding = "px-5 py-4", hide }) {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [isMobile]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,9 +45,21 @@ export default function Header({ padding = "px-5 py-4", hide }) {
     };
   }, []);
 
+  const capitalizeFirstLetter = (str) => {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  };
+
   return (
     <Navbar
-      bg={!hide ? "transparent" : "dark"}
+      bg={
+        !hide
+          ? isNavbarOpen
+            ? "secondary"
+            : scrollHeaderBg
+            ? "dark"
+            : "transparent"
+          : "dark"
+      }
       variant="dark"
       expand="lg"
       onToggle={handleNavbarToggle}
@@ -64,10 +77,7 @@ export default function Header({ padding = "px-5 py-4", hide }) {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
-        <Navbar.Collapse
-          id="basic-navbar-nav"
-          className="justify-content-end bg-secondary"
-        >
+        <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
           <div className="d-flex align-items-center">
             <Nav className="ml-auto gap-3 fw-bold align-items-center">
               <Nav.Link href="/">Home</Nav.Link>
@@ -79,11 +89,8 @@ export default function Header({ padding = "px-5 py-4", hide }) {
                   <NavDropdown.Item>Philosophy</NavDropdown.Item>
                 </Link>
                 <NavDropdown.Item href="/contact">Contact</NavDropdown.Item>
-                {/* Add more submenu items here if needed */}
               </NavDropdown>
-              <Link to="blogsSection" smooth={true} duration={500} offset={-70}>
-                <Nav.Link href="/blogs">Blogs</Nav.Link>
-              </Link>
+              <Nav.Link href="/blogs">Blogs</Nav.Link>
               {loggedInUser ? (
                 <Dropdown align="end">
                   <Dropdown.Toggle
@@ -126,8 +133,3 @@ export default function Header({ padding = "px-5 py-4", hide }) {
     </Navbar>
   );
 }
-
-// Function to capitalize the first letter of a string
-const capitalizeFirstLetter = (str) => {
-  return str.charAt(0).toUpperCase() + str.slice(1);
-};
