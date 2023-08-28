@@ -1,3 +1,8 @@
+.member-section {
+  padding: 236px 0 240px 0;
+  /* background-color: #000; */
+  background-image: linear-gradient(to top, #5c7490, #000);
+}
 .member-section .member-inner-section {
   background-color: rgb(20, 24, 27);
   height: 250px;
@@ -16,7 +21,6 @@
     grid-template-columns: 100%;
   }
 }
-
 
 .member-section .member-inner-section h1 {
   font-weight: bold;

@@ -10,7 +10,9 @@ function About() {
         <div className="about-content">
           <Slide direction="left">
             <div className="about-text">
-              <h2>About Karma Returns</h2>
+              <h2>
+                About <span className="text-danger">Karma</span> Returns
+              </h2>
               <p>
                 Welcome to Karma Returns, your trusted source for insightful and
                 informative investment blogs. We are dedicated to providing you

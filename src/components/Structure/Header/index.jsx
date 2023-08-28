@@ -88,7 +88,9 @@ export default function Header({ padding = "px-5 py-4", hide }) {
                 <Link to="philosophySection" smooth={true} duration={500}>
                   <NavDropdown.Item>Philosophy</NavDropdown.Item>
                 </Link>
-                <NavDropdown.Item href="/contact">Contact</NavDropdown.Item>
+                <Link to="contactSection" smooth={true} duration={500}>
+                  <NavDropdown.Item>Contact</NavDropdown.Item>
+                </Link>
               </NavDropdown>
               <Nav.Link href="/blogs">Blogs</Nav.Link>
               {loggedInUser ? (

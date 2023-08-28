@@ -40,7 +40,7 @@ const Blog = ({ title, subTitle, image, user = {}, updatedAt, id, likes }) => {
           <OverlayTrigger placement="top" overlay={<Tooltip>{title}</Tooltip>}>
             <h3 className="blog-title-main mt-3">{title}</h3>
           </OverlayTrigger>
-          <p className="blog-subtitle-main">{subTitle}</p>
+          <p className="blog-subtitle-main text-light fw-bold">{subTitle}</p>
         </div>
       </div>
     </div>

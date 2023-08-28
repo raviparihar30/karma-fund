@@ -7,7 +7,7 @@ const Member = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="my-5 member-section">
+    <div className="bg-dark member-section">
       <div className="container member-inner-section px-5">
         <div className="d-flex flex-column text-container">
           <SpiralIcon />

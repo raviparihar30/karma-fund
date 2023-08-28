@@ -8,6 +8,7 @@ import { Element } from "react-scroll";
 import About from "../../components/HomePage/About";
 import Philosophy from "../../components/HomePage/Philosophy";
 import WhyUs from "../../components/HomePage/WhyUs";
+import Contact from "../../components/HomePage/Contact";
 
 const HomePage = () => {
   const blogsRef = useRef(null);
@@ -21,10 +22,6 @@ const HomePage = () => {
       <div className="banner-container position-relative">
         <Banner />
       </div>
-      <Element name="blogsSection">
-        <LatestBlogs />
-      </Element>
-      <Member />
       <Element name="aboutSection">
         <About />
       </Element>
@@ -32,6 +29,13 @@ const HomePage = () => {
         <Philosophy />
       </Element>
       <WhyUs />
+      <Element name="blogsSection">
+        <LatestBlogs />
+      </Element>
+      <Element name="contactSection">
+        <Contact />
+      </Element>
+      <Member />
     </MainLayout>
   );
 };

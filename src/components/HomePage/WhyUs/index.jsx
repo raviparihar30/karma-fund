@@ -12,7 +12,9 @@ function WhyUs() {
   return (
     <section id="why-us" className="whyus-section">
       <div className="container">
-        <h2 className="fw-bold">Why Us</h2>
+        <h2 className="fw-bold">
+          Why <span className="text-danger">Us</span>
+        </h2>
         <div className="whyus-points">
           <div className="whyus-point">
             <h3>Manager's Years of Experience</h3>

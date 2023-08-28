@@ -5,3 +5,8 @@
   border: 0;
   margin: 12px;
 }
+.footer-section {
+  padding: 36px 0 70px 0;
+  background-image: linear-gradient(to top, #000, #5c7490);
+  color: #fff;
+}

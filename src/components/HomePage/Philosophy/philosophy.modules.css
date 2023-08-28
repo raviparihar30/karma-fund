@@ -4,8 +4,11 @@
 }
 
 .dark-background {
-  background-image: linear-gradient(to right, #141e30, #5c7490);
+  background-image: linear-gradient(to bottom, #000, #5c7490);
   color: #fff;
+}
+.philosophy-content h1 {
+  font-size: 80px;
 }
 
 .container {

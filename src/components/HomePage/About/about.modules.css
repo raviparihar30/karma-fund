@@ -1,7 +1,7 @@
 /* about.modules.css */
 .about-section {
   padding: 80px 0;
-  background-color: #f8f8f8;
+  background-color: #000;
 }
 
 .container {
@@ -22,15 +22,21 @@
 }
 
 .about-text h2 {
-  font-size: 28px;
+  font-size: 80px;
   margin-bottom: 10px;
   font-weight: bold;
+  color: #fff;
 }
-
+@media (max-width: 878px) {
+  .about-text h2 {
+    font-size: 54px;
+  }
+}
 .about-text p {
   font-size: 18px;
   line-height: 1.6;
   margin-bottom: 20px;
+  color: #fff;
 }
 
 .about-image {

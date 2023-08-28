@@ -1,28 +1,31 @@
-/* whyus.modules.css */
-.whyus-section {
-  padding: 36px 0 140px 0;
+/* contact.modules.css */
+.contact-section {
+  padding: 36px 0 70px 0;
   /* background-color: #000; */
   background-image: linear-gradient(to top, #000, #5c7490);
 }
 
-.whyus-points {
+.contact-points {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
   gap: 40px;
   margin-top: 40px;
 }
-.whyus-section h2 {
+.contact-points .contact-container {
+  background-color: white;
+}
+.contact-section .heading {
   font-size: 80px;
   color: #fff;
 }
 @media (max-width: 878px) {
-  .whyus-section h2 {
+  .contact-section .heading {
     font-size: 52px;
   }
 }
 @media (max-width: 878px) {
-  .whyus-points {
+  .contact-points {
     flex-direction: column; /* Stack in reverse order */
   }
 }
@@ -32,28 +35,28 @@
   color: #1abc9c; /* Icon color */
 }
 
-.whyus-point {
+.contact-point {
   flex: 1;
   background-color: #fff;
   border-radius: 8px;
   padding: 20px;
   text-align: center;
   transition: transform 0.3s ease;
-  background-image: linear-gradient(to bottom, #252424, #59595a);
+  background-image: linear-gradient(to bottom, #59595a, #59595a);
   color: #fff;
   box-shadow: rgba(118, 118, 119, 0.2) 0px 7px 29px 0px;
 }
 
-.whyus-point:hover {
+.contact-point:hover {
   transform: translateY(-5px);
 }
 
-.whyus-point h3 {
+.contact-point h3 {
   font-size: 24px;
   margin-bottom: 10px;
 }
 
-.whyus-point p {
+.contact-point p {
   font-size: 16px;
   line-height: 1.6;
 }
