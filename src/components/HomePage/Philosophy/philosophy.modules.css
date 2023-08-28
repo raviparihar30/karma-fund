@@ -11,6 +11,11 @@
   font-size: 80px;
 }
 
+@media (max-width: 878px) {
+  .philosophy-content h1 {
+    font-size: 52px;
+  }
+}
 .container {
   max-width: 1200px;
   margin: 0 auto;

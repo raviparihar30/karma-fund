@@ -92,7 +92,9 @@ export default function Header({ padding = "px-5 py-4", hide }) {
                   <NavDropdown.Item>Contact</NavDropdown.Item>
                 </Link>
               </NavDropdown>
-              <Nav.Link href="/blogs">Blogs</Nav.Link>
+              <Link to="blogsSection" smooth={true} duration={500}>
+                <Nav.Link href="/blogs">Blogs</Nav.Link>
+              </Link>
               {loggedInUser ? (
                 <Dropdown align="end">
                   <Dropdown.Toggle

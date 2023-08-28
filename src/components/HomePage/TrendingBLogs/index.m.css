@@ -1,10 +1,16 @@
 .trending-blog-container-bg {
   background: #1f2937;
 }
-.trending-blog-container h1 {
-  font-size: 3rem;
+.trending-blog-container-bg .trending-blog-container h1 {
+  font-size: 80px;
   line-height: 1;
   letter-spacing: -0.01em;
   font-family: Cabinet Grotesk, sans-serif;
   font-weight: bold;
+}
+
+@media (max-width: 878px) {
+  .trending-blog-container-bg .trending-blog-container h1 {
+    font-size: 52px;
+  }
 }
