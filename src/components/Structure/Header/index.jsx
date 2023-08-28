@@ -77,7 +77,7 @@ export default function Header({ padding = "px-5 py-4", hide }) {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
-        <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
+        <Navbar.Collapse className="justify-content-end" id="basic-navbar-nav">
           <div className="d-flex align-items-center">
             <Nav className="ml-auto gap-3 fw-bold align-items-center">
               <Nav.Link href="/">Home</Nav.Link>
