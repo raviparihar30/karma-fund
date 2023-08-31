@@ -34,7 +34,6 @@ const ContactForm = () => {
   return (
     <div className="container my-5 contact">
       <div className="contact-container">
-        <h2 className="text-center fw-bold">Contact Us</h2>
         <Form onSubmit={handleSubmit}>
           <Form.Group controlId="formName">
             <Form.Label>Name</Form.Label>

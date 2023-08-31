@@ -13,7 +13,9 @@ function Philosophy() {
               flex: 1,
             }}
           >
-            <h1 className="mb-4">PHILOSOPHY</h1>
+            <h1 className="mb-4">
+              OUR <span className="text-danger">PHILOSOPHY</span>
+            </h1>
             <ul>
               <Reveal className="fade-in">
                 <li>

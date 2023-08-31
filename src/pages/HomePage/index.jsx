@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import Banner from "../../components/HomePage/Banner";
 import LatestBlogs from "../../components/HomePage/LatestBlogs";
-import Member from "../../components/HomePage/Member";
+// import Member from "../../components/HomePage/Member";
 import MainLayout from "../../layouts/MainLayout";
 import "./index.m.css";
 import { Element } from "react-scroll";
@@ -35,7 +35,7 @@ const HomePage = () => {
       <Element name="contactSection">
         <Contact />
       </Element>
-      <Member />
+      {/* <Member /> */}
     </MainLayout>
   );
 };

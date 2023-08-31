@@ -5,8 +5,7 @@ import "./index.m.css";
 const Footer = () => (
   <div className="footer-section">
     <div className="container">
-      {" "}
-      <div className="d-flex flex-row justify-content-between">
+      <div className="d-flex flex-md-row flex-column justify-content-between">
         <Nav className="gap-2 fw-bold">
           <Nav.Link href="#about" className="text-light">
             About
