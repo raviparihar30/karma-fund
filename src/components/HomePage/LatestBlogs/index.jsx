@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Button, Col, Row } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 import Blog from "./Blog";
 import { BASE_URL, imageUrl } from "../../../apis";
-import { useNavigate } from "react-router-dom";
 import { Fade, Reveal } from "react-awesome-reveal";
 import "./index.m.css";
 
 const LatestBlogs = () => {
   const [latestPosts, setLatestPosts] = useState([]);
-  const navigate = useNavigate();
 
   const fetchLatestPosts = async () => {
     const response = await fetch(`${BASE_URL}/api/posts/`);

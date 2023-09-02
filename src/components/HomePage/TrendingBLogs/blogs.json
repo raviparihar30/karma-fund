@@ -1,42 +1,23 @@
 [
   {
-    "title": "Digital Art",
-    "image": "https://preview.cruip.com/creative/images/carousel-01.jpg",
-    "collections": 22
+    "title": "SHREYAS CHARI",
+    "subTitle": "CIO",
+    "image": "/images/team1.png",
+    "collections": 22,
+    "description": "Shreyas has 22 years of experience trading derivatives at institutions such as Deutsche Bank and Nomura Securities as well as on the buy side at Arrowhawk Capital Partners. He has traded all forms of exotic and vanilla derivatives over his career and has performed at the highest level over many markets including through the financial crisis with nine figure profits over the years. He has 5 years of experience trading options, futures and arbitrage in crypto since 2017 and is well versed with both CeFi as well as DeFi protocols"
   },
   {
-    "title": "Gradients",
-    "image": "https://preview.cruip.com/creative/images/carousel-02.jpg",
-    "collections": 22
+    "title": "TBA",
+    "subTitle": "COO",
+    "image": "https://bootstrapmade.com/demo/templates/HeroBiz/assets/img/team/team-1.jpg",
+    "collections": 22,
+    "description": "27 years of experience at SAC Global, Deutsche Bank, UBS and family offices as COO and CFO in the Americas. Additionally experienced with specific expertise along managing complex portfolio operations and derivatives. Familiar with AM businesses in the Middle East region as well as Asia"
   },
   {
-    "title": "Liquid 3D",
-    "image": "https://preview.cruip.com/creative/images/carousel-03.jpg",
-    "collections": 22
-  },
-  {
-    "title": "Abstraction",
-    "image": "https://preview.cruip.com/creative/images/carousel-04.jpg",
-    "collections": 22
-  },
-  {
-    "title": "Landscapes",
-    "image": "https://preview.cruip.com/creative/images/carousel-05.jpg",
-    "collections": 22
-  },
-  {
-    "title": "Pastel",
-    "image": "https://preview.cruip.com/creative/images/carousel-06.jpg",
-    "collections": 22
-  },
-  {
-    "title": "Dark 3D",
-    "image": "https://preview.cruip.com/creative/images/carousel-07.jpg",
-    "collections": 22
-  },
-  {
-    "title": "Baroque",
-    "image": "https://preview.cruip.com/creative/images/carousel-08.jpg",
-    "collections": 22
+    "title": "MAHENDRA CHOUDHARY",
+    "subTitle": "Quant / Engineer",
+    "image": "https://bootstrapmade.com/demo/templates/HeroBiz/assets/img/team/team-3.jpg",
+    "collections": 22,
+    "description": "Mahendra has experience in building systematic strategies and analytic tools at B&B Analytics. He has direct options and other derivatives experience in the machine learning space having worked on projects for trading desks in the crypto world such as SEBA. His experience in APIs, data modeling and working with volatility curves for market making is a direct relevant experience to Karma"
   }
 ]

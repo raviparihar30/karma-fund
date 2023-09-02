@@ -9,6 +9,8 @@ import About from "../../components/HomePage/About";
 import Philosophy from "../../components/HomePage/Philosophy";
 import WhyUs from "../../components/HomePage/WhyUs";
 import Contact from "../../components/HomePage/Contact";
+import TeamCarousel from "../../components/HomePage/Team";
+import Teams from "../../components/HomePage/TrendingBLogs";
 
 const HomePage = () => {
   const blogsRef = useRef(null);
@@ -35,6 +37,7 @@ const HomePage = () => {
       <Element name="contactSection">
         <Contact />
       </Element>
+      <Teams />
       {/* <Member /> */}
     </MainLayout>
   );

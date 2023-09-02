@@ -9,19 +9,19 @@ export default function MainSlider({ children }) {
     dots: false,
     arrows: false,
     infinite: true,
-    slidesToShow: 4,
+    slidesToShow: 1,
     slidesToScroll: 1,
     responsive: [
       {
         breakpoint: 1200,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 1,
         },
       },
       {
         breakpoint: 990,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
         },
       },
       {
@@ -48,7 +48,7 @@ export default function MainSlider({ children }) {
       <Slider {...settings} ref={(slider) => (sliderRef = slider)}>
         {children}
       </Slider>
-      <div className="slider-arrows my-5 mx-3">
+      <div className="slider-arrows mb-5 mx-3">
         <button
           className="slider-arrow prev rounded-circle py-3 bg-secondary text-light fw-bold"
           onClick={prevSlide}
