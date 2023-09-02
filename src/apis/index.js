@@ -1,5 +1,4 @@
 // https://karma-fund-backend.onrender.com
-// api.js
 
 import axios from "axios";
 
