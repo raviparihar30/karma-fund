@@ -1,9 +1,9 @@
-// https://karma-fund-backend.onrender.com
+// http://3.109.151.193:8000
 
 import axios from "axios";
 
-export const BASE_URL = "https://karma-fund-backend.onrender.com"; // Replace with your API base URL
-export const imageUrl = "https://karma-fund-backend.onrender.com/uploads/";
+export const BASE_URL = "http://3.109.151.193:8000"; // Replace with your API base URL
+export const imageUrl = "http://3.109.151.193:8000/uploads/";
 
 const api = axios.create({
   baseURL: BASE_URL,
