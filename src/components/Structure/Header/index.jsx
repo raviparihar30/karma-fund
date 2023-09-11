@@ -126,9 +126,14 @@ export default function Header({ padding = "px-5 py-4", hide }) {
                   </Dropdown.Menu>
                 </Dropdown>
               ) : (
-                <Nav.Link href="/signin" className="text-light">
-                  Sign In
-                </Nav.Link>
+                <>
+                  <Nav.Link href="/signin" className="text-light">
+                    Sign In
+                  </Nav.Link>
+                  <Nav.Link href="/register" className="text-light">
+                    Register
+                  </Nav.Link>
+                </>
               )}
             </Nav>
           </div>

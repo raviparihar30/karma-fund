@@ -1,10 +1,10 @@
 /* ReadMorePage.css */
 .read-more-page {
-  max-width: 50%;
+  max-width: 40%;
   margin: 32px auto;
   padding: 20px;
   font-family: Arial, sans-serif;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
   min-height: 300px;
 }
 @media only screen and (max-width: 700px) {
@@ -13,7 +13,7 @@
   }
 }
 .blog-title {
-  font-size: 28px;
+  font-size: 36px;
   font-weight: bold;
   margin-bottom: 10px;
   color: #333;
@@ -71,3 +71,41 @@
 }
 
 /* Optional: Add custom styling for other elements as needed */
+.author-info {
+  display: flex;
+  align-items: end;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.author-info .MuiAvatar-root {
+  width: 30px; /* Adjust the size of the avatar image */
+  height: 30px;
+  margin-right: 10px;
+  border-radius: 50%; /* To make it circular */
+}
+
+.author-name {
+  font-weight: bold;
+  margin: 0;
+  font-size: 18px; /* Adjust the font size as needed */
+}
+
+.author-social-links {
+  display: flex;
+  align-items: center;
+  margin-top: -5px;
+  margin-bottom: -15px;
+}
+
+.author-social-links a {
+  text-decoration: none;
+  margin-right: 10px; /* Adjust the spacing between social media icons */
+  /* color: #333; Adjust the color of the icons */
+  font-size: 20px; /* Adjust the font size of the icons */
+}
+
+.author-social-links a:hover {
+  color: #007bff; /* Change the color on hover */
+}

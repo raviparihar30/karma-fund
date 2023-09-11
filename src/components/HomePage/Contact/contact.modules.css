@@ -2,7 +2,7 @@
 .contact-section {
   padding: 36px 0 70px 0;
   /* background-color: #000; */
-  background-image: linear-gradient(to top, #000, #5c7490);
+  background-image: linear-gradient(to top, #5c7490, #000);
 }
 
 .contact-points {

@@ -34,10 +34,11 @@ const HomePage = () => {
       <Element name="blogsSection">
         <LatestBlogs />
       </Element>
+      <Teams />
       <Element name="contactSection">
         <Contact />
       </Element>
-      <Teams />
+
       {/* <Member /> */}
     </MainLayout>
   );

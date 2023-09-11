@@ -3,14 +3,16 @@ import { Form, Button } from "react-bootstrap";
 import { Avatar } from "@mui/material";
 import { postRequest } from "../../apis";
 import "./index.m.css";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm, Controller } from "react-hook-form";
+import Swal from "sweetalert2";
 
 const RegisterForm = () => {
   const navigate = useNavigate();
   const {
     handleSubmit,
     control,
+    watch,
     formState: { errors },
   } = useForm();
 
@@ -18,16 +20,33 @@ const RegisterForm = () => {
     try {
       // Call the register API
       const response = await postRequest("api/users/register", formData);
-      // console.log("response  => ", response);
       if (response?.success) {
-        // localStorage.setItem("token", response?.data);
-        navigate("/login");
+        navigate("/signin");
+        Swal.fire({
+          icon: "success",
+          title: "Success",
+          text: "Register Successful",
+        });
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Register Failed",
+          text: response?.message || "An error occurred during register.",
+        });
       }
     } catch (error) {
       // Handle error
-      console.error("Registration failed:", error?.response?.data?.message);
+      Swal.fire({
+        icon: "error",
+        title: "Success",
+        text:
+          error?.response?.data?.message ||
+          "An error occurred during register.",
+      });
     }
   };
+
+  const password = watch("password", "");
 
   return (
     <div className="container my-5 register">
@@ -128,22 +147,26 @@ const RegisterForm = () => {
             </Form.Control.Feedback>
           </Form.Group>
 
-          <Form.Group className="mb-3" controlId="formUserName">
-            <Form.Label>Username</Form.Label>
+          <Form.Group className="mb-3" controlId="formConfirmPassword">
+            <Form.Label>Confirm Password</Form.Label>
             <Controller
-              name="userName"
+              name="confirmPassword"
               control={control}
-              rules={{ required: "Username is required" }}
+              rules={{
+                required: "Confirm Password is required",
+                validate: (value) =>
+                  value === password || "Passwords do not match",
+              }}
               render={({ field }) => (
                 <Form.Control
-                  type="text"
+                  type="password"
                   {...field}
-                  isInvalid={!!errors.userName}
+                  isInvalid={!!errors.confirmPassword}
                 />
               )}
             />
             <Form.Control.Feedback type="invalid">
-              {errors.userName?.message}
+              {errors.confirmPassword?.message}
             </Form.Control.Feedback>
           </Form.Group>
 
@@ -154,6 +177,12 @@ const RegisterForm = () => {
           >
             Join
           </Button>
+          <Form.Text className="d-flex flex-column text-center justify-content-center w-50 mx-auto">
+            Already have an account?{" "}
+            <Link to="/signin" className="text-dark">
+              Sign In
+            </Link>
+          </Form.Text>
         </Form>
       </div>
     </div>

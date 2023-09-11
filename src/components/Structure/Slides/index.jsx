@@ -9,7 +9,9 @@ export default function MainSlider({ children }) {
     dots: false,
     arrows: false,
     infinite: true,
-    slidesToShow: 1,
+    centerMode: true,
+    centerPadding: "0px",
+    slidesToShow: 2,
     slidesToScroll: 1,
     responsive: [
       {

@@ -1,5 +1,5 @@
 .trending-blog-container-bg {
-  background-image: linear-gradient(to bottom, #000, #5c7490);
+  background-image: linear-gradient(to bottom, #5c7490,#000);
   color: #fff;
 }
 .trending-blog-container-bg .trending-blog-container h1 {

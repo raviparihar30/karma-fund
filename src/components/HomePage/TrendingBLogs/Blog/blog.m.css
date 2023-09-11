@@ -1,5 +1,5 @@
 .trending-card {
-  width: 600px;
+  width: 400px;
   margin: 0 auto;
   background: transparent !important;
   border: 0 !important;
@@ -11,7 +11,7 @@
   }
 }
 .trending-card .card-body {
-  min-height: 280px;
+  min-height: 355px;
   box-shadow: rgb(125, 153, 182) 0px 20px 30px -10px;
   border-radius: 12px;
   margin-top: -52px;
@@ -23,8 +23,8 @@
 }
 
 .trending-card img {
-  height: 390px;
-  width: 300px;
+  height: 300px;
+  width: 240px;
 }
 
 .trending-card h4 {

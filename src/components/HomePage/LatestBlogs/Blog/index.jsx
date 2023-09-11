@@ -18,13 +18,13 @@ const Blog = ({ title, subTitle, image, user = {}, updatedAt, id, likes }) => {
 
   return (
     <div
-      className="blog-card"
+      className="blog-card h-100"
       onClick={() =>
         loggedInUser ? navigate(`/blog/${id}`) : navigate(`signin?blog=${id}`)
       }
     >
-      <div className="blog-image-container">
-        <img className="blog-image" src={image} alt="Blog" />
+      <div className="blog-image-container h-100">
+        <img className="blog-image h-100" src={image} alt="Blog" />
       </div>
       <div className="blog-content">
         <div className="blog-text">

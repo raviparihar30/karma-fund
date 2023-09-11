@@ -46,7 +46,11 @@ const LatestBlogs = () => {
           <Row className="my-5  py-5 rounded">
             {latestPosts.map((blog, index) => (
               <Col key={index} md={6} className="mb-4">
-                <Reveal className="fade-in" delay={index * 1 + 200} triggerOnce>
+                <Reveal
+                  className="fade-in h-100"
+                  delay={index * 1 + 200}
+                  triggerOnce
+                >
                   <Blog {...blog} />
                 </Reveal>
               </Col>

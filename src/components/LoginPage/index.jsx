@@ -4,8 +4,9 @@ import { Avatar } from "@mui/material";
 import "./index.m.css";
 import { useForm, Controller } from "react-hook-form";
 import { postRequest } from "../../apis";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { UserContext } from "../../context/user";
+import Swal from "sweetalert2"; // Import SweetAlert
 
 const LoginForm = () => {
   const { setLoggedInUser } = useContext(UserContext);
@@ -16,27 +17,44 @@ const LoginForm = () => {
     formState: { errors },
   } = useForm();
   const navigate = useNavigate();
+
   const onSubmit = async (formData) => {
-    // Handle form submission logic here, e.g., send the data to the server
-    // console.log(formData);
     try {
-      // Call the register API
       const response = await postRequest("api/users/login", formData);
       if (response?.success) {
         localStorage.setItem("token", response?.data?.token);
         localStorage.setItem("rn-user", JSON.stringify(response?.data?.user));
         setLoggedInUser(response?.data?.user);
+        Swal.fire({
+          icon: "success",
+          title: "Success",
+          text: "Login Successful",
+        });
         if (searchParams.get("blog")) {
           navigate(`/blog/${searchParams.get("blog")}`);
         } else {
           navigate("/");
         }
+      } else {
+        console.log("39 => ", response);
+        // Login failed, show a SweetAlert error message
+        Swal.fire({
+          icon: "error",
+          title: "Login Failed",
+          text: response?.message || "An error occurred during login.",
+        });
       }
     } catch (error) {
       // Handle error
+      console.log("error => ", error?.response?.data?.message);
       console.error("Login failed:", error?.response?.data?.message);
+      Swal.fire({
+        icon: "error",
+        title: "Login Failed",
+        text:
+          error?.response?.data?.message || "An error occurred during login.",
+      });
     }
-    // Reset the form after submission
   };
 
   return (
@@ -99,6 +117,12 @@ const LoginForm = () => {
           >
             Login
           </Button>
+          <Form.Text className="d-flex flex-column text-center justify-content-center w-50 mx-auto">
+            Don't have an account?{" "}
+            <Link to="/register" className="text-dark">
+              Register
+            </Link>
+          </Form.Text>
         </Form>
       </div>
     </div>
