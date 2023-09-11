@@ -50,7 +50,7 @@ const BlogPage = () => {
           <>
             <h2 className={"blog-title"}>{blog.title}</h2>
             <div className="author-info">
-              <div className="d-flex gap-2">
+              <div className="d-flex gap-1 align-items-center me-2">
                 <Avatar
                   src={`${imageUrl}${author.profilePhoto}`}
                   alt={author.name}

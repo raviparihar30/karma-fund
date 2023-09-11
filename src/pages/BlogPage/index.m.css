@@ -73,8 +73,7 @@
 /* Optional: Add custom styling for other elements as needed */
 .author-info {
   display: flex;
-  align-items: end;
-  flex-direction: column;
+  align-items: center;
   justify-content: flex-end;
   margin-top: 10px;
 }
@@ -95,8 +94,8 @@
 .author-social-links {
   display: flex;
   align-items: center;
-  margin-top: -5px;
-  margin-bottom: -15px;
+  /* margin-top: -5px;
+  margin-bottom: -15px; */
 }
 
 .author-social-links a {
