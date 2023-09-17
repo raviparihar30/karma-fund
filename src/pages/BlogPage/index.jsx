@@ -34,7 +34,7 @@ const BlogPage = () => {
       if (response.ok) {
         const { data } = await response.json();
         setBlog(data?.post ?? {});
-        setAuthor(data?.author);
+        setAuthor(data?.author ?? {});
       }
     } catch (error) {
       console.error("Error fetching blog posts:", error);
