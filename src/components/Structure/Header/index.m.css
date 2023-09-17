@@ -3,44 +3,52 @@
   position: fixed;
   width: 100%;
   z-index: 1000;
-  background-color: #222; /* Set the initial background color */
+  background-color: #fff; /* Set the initial background color */
   transition: background-color 0.3s;
 }
 
 /* Apply the same styles to dropdown links as regular links */
 .header-wrapper.navbar-nav .nav-link,
 .header-wrapper.navbar-nav .nav-item.dropdown:hover .nav-link {
-  color: #fff;
+  color: #000 !important;
   text-decoration: none;
   font-weight: bold;
 }
 
 /* Apply styles to dropdown menu items */
 .header-wrapper.navbar-nav .dropdown-menu .dropdown-item {
-  color: #000; /* Change to a color that's visible against the background */
+  color: #fff; /* Change to a color that's visible against the background */
   background-color: transparent;
   font-weight: bold;
 }
 
 /* Apply styles to dropdown menu items on hover */
 .header-wrapper.navbar-nav .dropdown-menu .dropdown-item:hover {
-  color: #000; /* Change to a color that's visible against the background */
+  color: #fff; /* Change to a color that's visible against the background */
   background-color: transparent;
   text-decoration: underline;
 }
 
 /* Change header background color on scroll */
 .scroll-header-bg {
-  background-color: #333; /* Set the background color you want on scroll */
+  background-color: #f8f7f7; /* Set the background color you want on scroll */
 }
 .logo-subtext {
   font-size: 14px; /* Adjust the font size as needed */
-  color: #fff; /* Adjust the color as needed */
+  color: #000; /* Adjust the color as needed */
 }
 
 @media (max-width: 878px) {
   .logo-subtext {
     font-size: 10px; /* Adjust the font size as needed */
-    color: #fff; /* Adjust the color as needed */
+    color: #000; /* Adjust the color as needed */
   }
+}
+
+.head a {
+  color: #000 !important;
+}
+
+.head a:hover {
+  color: #000;
 }

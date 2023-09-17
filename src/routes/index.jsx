@@ -6,6 +6,7 @@ import RegisterPage from "../pages/RegisterPage";
 import AboutPage from "../pages/AboutPage";
 import BlogPage from "../pages/BlogPage";
 import ContactPage from "../pages/ContactPage";
+import FundPage from "../pages/FundPage";
 
 export const AllRoutes = () => (
   <Routes>
@@ -13,6 +14,7 @@ export const AllRoutes = () => (
     <Route path="/about" element={<AboutPage />} />
     <Route path="/contact" element={<ContactPage />} />
     <Route path="/register" element={<RegisterPage />} />
+    <Route path="/fund" element={<FundPage />} />
     <Route path="/signin" element={<LoginPage />} />
     <Route path="/blog/:blogId" element={<BlogPage />} />
     <Route path="*" element={<PageNotFoundPage />} />

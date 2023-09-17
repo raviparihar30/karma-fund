@@ -23,14 +23,14 @@ const Banner = () => {
         options={{
           fullScreen: false,
           background: {
-            image: " linear-gradient(19deg, #000 0%, #000 100%)",
+            image: " linear-gradient(19deg, #fff 0%, #fff 100%)",
           },
           particles: {
             number: { value: 10, density: { enable: true, value_area: 600 } },
-            color: { value: "#ffffff" },
+            color: { value: "#000" },
             shape: {
               type: "square",
-              stroke: { width: 0, color: "#000000" },
+              stroke: { width: 0, color: "#fff" },
               polygon: { nb_sides: 5 },
             },
             opacity: {
@@ -46,7 +46,7 @@ const Banner = () => {
             line_linked: {
               enable: false,
               distance: 300,
-              color: "#ffffff",
+              color: "#000",
               opacity: 0,
               width: 0,
             },
@@ -91,7 +91,7 @@ const Banner = () => {
           transition={{ duration: 0.5 }}
           className="animate__animated animate__fadeInDown"
         >
-          Welcome to <span className="text-danger">Karma</span> Returns
+          <span className="text-danger">Karma</span> Returns Digital Assets
         </motion.h1>
         <motion.h5
           initial={{ opacity: 0, y: 20 }}
@@ -99,11 +99,11 @@ const Banner = () => {
           transition={{ duration: 0.5, delay: 0.5 }}
           className="animate__animated animate__fadeInUp"
         >
-          We follow a simple prudent investment approach, hear from us about how
-          we generate market neutral returns in our deck and implement
-          derivatives to create asymmetric payoffs.
-          <br />
-          Get in touch if you wish to hear more.
+          A market neutral approach in digital assets to create volatility
+          minimized returns. Karma employs its experience of more than 25 years
+          in traditional derivatives markets in crypto markets deploying
+          institutional grade systems and risk management to create robust
+          portfolios and generate returns regardless of market direction
         </motion.h5>
       </div>
     </div>

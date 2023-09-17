@@ -2,7 +2,7 @@
 .contact-section {
   padding: 36px 0 70px 0;
   /* background-color: #000; */
-  background-image: linear-gradient(to top, #5c7490, #000);
+  background-image: linear-gradient(to top, #5c7490, #fff);
 }
 
 .contact-points {
@@ -13,11 +13,11 @@
   margin-top: 40px;
 }
 .contact-points .contact-container {
-  background-color: white;
+  background-color: #000;
 }
 .contact-section .heading {
   font-size: 80px;
-  color: #fff;
+  color: #000;
 }
 @media (max-width: 878px) {
   .contact-section .heading {
@@ -37,14 +37,14 @@
 
 .contact-point {
   flex: 1;
-  background-color: #fff;
+  background-color: #000;
   border-radius: 8px;
   padding: 20px;
   text-align: center;
   transition: transform 0.3s ease;
-  background-image: linear-gradient(to bottom, #59595a, #59595a);
-  color: #fff;
-  box-shadow: rgba(118, 118, 119, 0.2) 0px 7px 29px 0px;
+  background-image: linear-gradient(to bottom, #e1e1e4, #e6e6f0);
+  color: #000;
+  box-shadow: rgba(230, 230, 233, 0.2) 0px 7px 29px 0px;
 }
 
 .contact-point:hover {

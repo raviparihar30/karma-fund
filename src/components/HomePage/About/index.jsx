@@ -11,25 +11,21 @@ function About() {
           <Slide direction="left">
             <div className="about-text">
               <h2>
-                About <span className="text-danger">Karma</span> Returns
+                <span className="text-danger">About</span> Us
               </h2>
               <p>
-                Welcome to Karma Returns, your trusted source for insightful and
-                informative investment blogs. We are dedicated to providing you
-                with the latest trends, analysis, and advice in the world of
-                investments.
+                We provide timely and insightful research and commentary on the
+                crypto markets to provide you context and understanding of this
+                new asset class. In crypto, we apply principles honed in varied
+                market regimes through the 90’s to the present day across
+                multiple assets such as Equities, Commodities, Fixed-Income &
+                Global Macro.
               </p>
               <p>
-                Our team of experts is passionate about helping both beginners
-                and seasoned investors make informed decisions. We believe that
-                knowledge is the key to successful investing, and our blogs are
-                designed to empower you with the information you need.
-              </p>
-              <p>
-                Whether you're interested in stocks, real estate,
-                cryptocurrencies, or any other investment vehicle, we've got you
-                covered. Our commitment is to deliver high-quality content that
-                adds value to your investment journey.
+                Our deep and broad expertise in portfolio construction is
+                applicable to many use cases including treasury management for
+                yield enhancement and protection, non correlated market
+                solutions, hedging optimization and arbitrage based strategies
               </p>
             </div>
           </Slide>

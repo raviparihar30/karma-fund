@@ -1,16 +1,35 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Nav, Navbar, NavDropdown, Dropdown } from "react-bootstrap";
 import { Avatar } from "@mui/material";
-import "./index.m.css"; // Import your custom CSS file
-import { UserContext } from "../../../context/user";
 import { Link } from "react-scroll";
+import { useNavigate } from "react-router-dom";
+
+import "./index.m.css"; // Import your custom CSS file
+
+import { UserContext } from "../../../context/user";
 
 export default function Header({ padding = "px-5 py-4", hide }) {
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
   const { loggedInUser, setLoggedInUser } = useContext(UserContext);
   const [scrollHeaderBg, setScrollHeaderBg] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const navigate = useNavigate();
+  const isHomePage = window.location.pathname === "/"; // Adjust the condition for your specific router setup
 
+  const scrollToSection = (sectionId) => {
+    if (isHomePage) {
+      // If it's the home page, scroll to the section directly
+      document.getElementById(sectionId).scrollIntoView({ behavior: "smooth" });
+    } else {
+      // If it's not the home page, redirect to the home page and then scroll
+      navigate("/");
+      setTimeout(() => {
+        document
+          .getElementById(sectionId)
+          .scrollIntoView({ behavior: "smooth" });
+      }, 1000); // Adjust the delay as needed
+    }
+  };
   const handleNavbarToggle = () => {
     setIsNavbarOpen(!isNavbarOpen);
   };
@@ -56,11 +75,11 @@ export default function Header({ padding = "px-5 py-4", hide }) {
           ? isNavbarOpen
             ? "secondary"
             : scrollHeaderBg
-            ? "dark"
+            ? "light"
             : "transparent"
-          : "dark"
+          : "light"
       }
-      variant="dark"
+      variant="light"
       expand="lg"
       onToggle={handleNavbarToggle}
       className={`w-100 ${padding} d-flex justify-content-between align-items-center z-1 header-wrapper ${
@@ -68,38 +87,104 @@ export default function Header({ padding = "px-5 py-4", hide }) {
       }`}
     >
       <div className="container head">
-        <Navbar.Brand href="/" className="fw-bold text-center">
+        {/* <Navbar.Brand href="/" className="fw-bold text-center">
           Karma Returns
           <br />
           <small className="logo-subtext">
             MARKET NEUTRAL DIGITALASSETS FUND
           </small>
-        </Navbar.Brand>
+        </Navbar.Brand> */}
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
         <Navbar.Collapse className="justify-content-end" id="basic-navbar-nav">
-          <div className="d-flex align-items-center">
+          <div className="d-flex align-items-center text-dark">
             <Nav className="ml-auto gap-3 fw-bold align-items-center">
-              <Nav.Link href="/">Home</Nav.Link>
-              <NavDropdown title="Company" id="company-dropdown">
-                <Link to="aboutSection" smooth={true} duration={500}>
-                  <NavDropdown.Item>About</NavDropdown.Item>
-                </Link>
-                <Link to="philosophySection" smooth={true} duration={500}>
-                  <NavDropdown.Item>Philosophy</NavDropdown.Item>
-                </Link>
-                <Link to="contactSection" smooth={true} duration={500}>
-                  <NavDropdown.Item>Contact</NavDropdown.Item>
-                </Link>
+              <Nav.Link href="/" className="text-dark">
+                Home
+              </Nav.Link>
+              <Nav.Link href="/fund" className="text-dark">
+                Fund
+              </Nav.Link>
+              <NavDropdown
+                title="Company"
+                className="text-dark"
+                id="company-dropdown"
+              >
+                {isHomePage ? (
+                  <Link
+                    to="aboutSection"
+                    className="text-dark"
+                    smooth={true}
+                    duration={500}
+                  >
+                    <NavDropdown.Item className="text-dark">
+                      About
+                    </NavDropdown.Item>
+                  </Link>
+                ) : (
+                  <NavDropdown.Item
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollToSection("about");
+                    }}
+                  >
+                    About
+                  </NavDropdown.Item>
+                )}
+                {isHomePage ? (
+                  <Link to="philosophySection" smooth={true} duration={500}>
+                    <NavDropdown.Item>Philosophy</NavDropdown.Item>
+                  </Link>
+                ) : (
+                  <NavDropdown.Item
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollToSection("philosophy");
+                    }}
+                  >
+                    Philosophy
+                  </NavDropdown.Item>
+                )}
+
+                {isHomePage ? (
+                  <Link to="contactSection" smooth={true} duration={500}>
+                    <NavDropdown.Item>Contact</NavDropdown.Item>
+                  </Link>
+                ) : (
+                  <NavDropdown.Item
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollToSection("contact");
+                    }}
+                  >
+                    Contact
+                  </NavDropdown.Item>
+                )}
               </NavDropdown>
-              <Link to="blogsSection" smooth={true} duration={500}>
-                <Nav.Link href="/blogs">Blogs</Nav.Link>
-              </Link>
+              {isHomePage ? (
+                <Link to="blogsSection" smooth={true} duration={500}>
+                  <Nav.Link href="/blogs">Blogs</Nav.Link>
+                </Link>
+              ) : (
+                <NavDropdown.Item
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection("blogs");
+                  }}
+                >
+                  Blogs
+                </NavDropdown.Item>
+              )}
+
               {loggedInUser ? (
                 <Dropdown align="end">
                   <Dropdown.Toggle
                     variant="link"
-                    className="text-light d-flex align-items-center gap-2"
+                    className="text-dark d-flex align-items-center gap-2"
                     id="user-dropdown-toggle"
                   >
                     <Avatar
@@ -127,10 +212,10 @@ export default function Header({ padding = "px-5 py-4", hide }) {
                 </Dropdown>
               ) : (
                 <>
-                  <Nav.Link href="/signin" className="text-light">
+                  <Nav.Link href="/signin" className="text-dark">
                     Sign In
                   </Nav.Link>
-                  <Nav.Link href="/register" className="text-light">
+                  <Nav.Link href="/register" className="text-dark">
                     Register
                   </Nav.Link>
                 </>

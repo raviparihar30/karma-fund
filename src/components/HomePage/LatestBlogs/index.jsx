@@ -12,7 +12,6 @@ const LatestBlogs = () => {
     const response = await fetch(`${BASE_URL}/api/posts/`);
     if (response.ok) {
       const { data } = await response.json();
-      console.log("data  => ", data);
       setLatestPosts(
         data.map(({ title, image, id, subTitle, updatedAt, User }) => ({
           image: image
@@ -39,7 +38,7 @@ const LatestBlogs = () => {
       <div className="blog-container">
         <div className="container">
           <Fade delay={10} cascade damping={1e-1}>
-            <h1 className="mb-5 text-light fw-bold">
+            <h1 className="mb-5 text-dark fw-bold">
               Latest <span className="text-danger">Blogs</span>
             </h1>
           </Fade>

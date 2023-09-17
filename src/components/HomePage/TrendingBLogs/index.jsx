@@ -6,7 +6,7 @@ import MainSlider from "../../Structure/Slides";
 const Teams = () => (
   <div className="trending-blog-container-bg py-4">
     <div className="container pt-5 trending-blog-container">
-      <h1 className="mb-5 text-light">
+      <h1 className="mb-5 text-dark">
         Our <span className="text-danger">Team</span>
       </h1>
       <MainSlider>

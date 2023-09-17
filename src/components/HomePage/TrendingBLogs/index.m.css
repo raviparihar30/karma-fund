@@ -1,6 +1,6 @@
 .trending-blog-container-bg {
-  background-image: linear-gradient(to bottom, #5c7490,#000);
-  color: #fff;
+  background-image: linear-gradient(to bottom, #5c7490, #fff);
+  color: #000;
 }
 .trending-blog-container-bg .trending-blog-container h1 {
   font-size: 80px;

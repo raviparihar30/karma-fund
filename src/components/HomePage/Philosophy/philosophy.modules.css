@@ -4,8 +4,8 @@
 }
 
 .dark-background {
-  background-image: linear-gradient(to bottom, #000, #5c7490);
-  color: #fff;
+  background-image: linear-gradient(to bottom, #fff, #5c7490);
+  color: #000;
 }
 .philosophy-content h1 {
   font-size: 80px;
@@ -63,7 +63,7 @@ p {
 .philosophy-part h3 {
   font-size: 24px;
   margin-bottom: 15px;
-  color: #333;
+  color: #756161;
 }
 
 .philosophy-content ul {
@@ -75,7 +75,7 @@ p {
   font-size: 16px;
   line-height: 1.6;
   margin-bottom: 20px;
-  color: #ddd; /* Lighter text color for better contrast */
+  color: #000; /* Lighter text color for better contrast */
   position: relative; /* Position relative for custom icon */
   padding-left: 35px; /* Add padding for the custom icon */
 }
@@ -95,11 +95,11 @@ p {
 }
 
 .part-square {
-  background: linear-gradient(to bottom, #333, #000);
+  background: linear-gradient(to bottom, #d3d2d2, #fff);
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(219, 218, 218, 0.1);
   padding: 20px;
-  color: #fff; /* Text color is white for better contrast */
+  color: #000; /* Text color is white for better contrast */
   transition: transform 0.3s ease;
   width: 100%;
 }

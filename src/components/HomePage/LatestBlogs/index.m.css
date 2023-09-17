@@ -8,6 +8,6 @@
 
 .blog-container {
   padding: 80px 0;
-  background-image: linear-gradient(to bottom, #000, #5c7490);
-  color: #fff;
+  background-image: linear-gradient(to bottom, #fff, #5c7490);
+  color: #000;
 }

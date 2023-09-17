@@ -2,7 +2,7 @@
 .whyus-section {
   padding: 36px 0 140px 0;
   /* background-color: #000; */
-  background-image: linear-gradient(to top, #000, #5c7490);
+  background-image: linear-gradient(to top, #fff, #5c7490);
 }
 
 .whyus-points {
@@ -14,7 +14,7 @@
 }
 .whyus-section h2 {
   font-size: 80px;
-  color: #fff;
+  color: #000;
 }
 @media (max-width: 878px) {
   .whyus-section h2 {
@@ -34,14 +34,14 @@
 
 .whyus-point {
   flex: 1;
-  background-color: #fff;
+  background-color: #000;
   border-radius: 8px;
   padding: 20px;
   text-align: center;
   transition: transform 0.3s ease;
-  background-image: linear-gradient(to bottom, #252424, #59595a);
-  color: #fff;
-  box-shadow: rgba(118, 118, 119, 0.2) 0px 7px 29px 0px;
+  background-image: linear-gradient(to bottom, #d3d0d0, #ceced6);
+  color: #000;
+  box-shadow: rgba(235, 235, 240, 0.2) 0px 7px 29px 0px;
 }
 
 .whyus-point:hover {

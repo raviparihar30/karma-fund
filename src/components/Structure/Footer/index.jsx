@@ -1,19 +1,22 @@
 import { Typography } from "@mui/material";
 import { Nav } from "react-bootstrap";
 import "./index.m.css";
+import { Link } from "react-scroll";
 
 const Footer = () => (
   <div className="footer-section">
     <div className="container">
       <div className="d-flex flex-md-row flex-column justify-content-between">
         <Nav className="gap-2 fw-bold">
-          <Nav.Link href="#about" className="text-light">
+          <Nav.Link href="#about" className="text-dark">
             About
           </Nav.Link>
-          <Nav.Link href="#services" className="text-light">
-            Get In Touch
-          </Nav.Link>
-          <Nav.Link href="#contact" className="text-light">
+          <Link to="contactSection" smooth={true} duration={500}>
+            <Nav.Link href="#services" className="text-dark">
+              Get In Touch
+            </Nav.Link>
+          </Link>
+          <Nav.Link href="#contact" className="text-dark">
             Privacy & Terms
           </Nav.Link>
         </Nav>
@@ -22,7 +25,7 @@ const Footer = () => (
             <Typography variant="h4" className="fw-semibold">
               Let's keep in touch!
             </Typography>
-            <h5 className="text-lg mt-0 mb-2 text-light">
+            <h5 className="text-lg mt-0 mb-2 text-dark">
               Find us on any of these platforms, we respond 1-2 business days.
             </h5>
             <div className="mt-3 lg:mb-0 mb-3 icons">
@@ -55,7 +58,7 @@ const Footer = () => (
         </div>
       </div>
       <div>
-        <Typography variant="caption" className="text-light mt-3">
+        <Typography variant="caption" className="text-dark mt-3">
           Some of our post may contain affiliate links to partner brands. We
           earn a small commission if you click the link and make a purchase.
           There is no extra cost to you, so it's just a nice way to help support
@@ -65,12 +68,12 @@ const Footer = () => (
           contact us.
         </Typography>
       </div>
-      <hr className="w-100 text-light my-5" />
+      <hr className="w-100 text-dark my-5" />
       <div className="d-flex flex-wrap items-center text-center">
         <div className="w-full px-2 mx-auto text-center">
-          <div className="text-sm text-light fw-semibold py-1">
+          <div className="text-sm text-dark fw-semibold py-1">
             Copyright © {new Date().getFullYear()}{" "}
-            <a href="/" className="text-light">
+            <a href="/" className="text-dark">
               Karma Returns
             </a>
             .

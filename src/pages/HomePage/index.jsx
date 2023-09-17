@@ -24,18 +24,18 @@ const HomePage = () => {
       <div className="banner-container position-relative">
         <Banner />
       </div>
-      <Element name="aboutSection">
+      <Element name="aboutSection" id="about">
         <About />
       </Element>
-      <Element name="philosophySection">
+      <Element name="philosophySection" id="philosophy">
         <Philosophy />
       </Element>
       <WhyUs />
-      <Element name="blogsSection">
+      <Element name="blogsSection" id="blogs">
         <LatestBlogs />
       </Element>
       <Teams />
-      <Element name="contactSection">
+      <Element name="contactSection" id="contact">
         <Contact />
       </Element>
 

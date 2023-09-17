@@ -1,12 +1,12 @@
 .footer-section button {
   width: 46px;
   height: 46px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px !important;
+  box-shadow: rgba(243, 241, 241, 0.24) 0px 3px 8px !important;
   border: 0;
   margin: 12px;
 }
 .footer-section {
   padding: 36px 0 70px 0;
-  background-image: linear-gradient(to top, #000, #5c7490);
-  color: #fff;
+  background-image: linear-gradient(to top, #fff, #5c7490);
+  color: #000;
 }

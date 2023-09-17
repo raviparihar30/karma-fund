@@ -11,7 +11,7 @@
 }
 
 .banner-text-container {
-  max-width: 800px;
+  max-width: 100%;
   color: #000;
   text-align: center;
   padding: 16px;
@@ -20,20 +20,23 @@
 }
 
 .banner-text-container h1 {
-  font-size: 4.5rem;
+  font-size: 5rem;
   font-weight: bold;
+  text-align: center;
+  margin-bottom: 24px;
 }
 
 .banner-text-container h5 {
   font-weight: normal;
   line-height: 28px;
-  font-size: 18px;
+  font-size: 22px;
+  text-align: center;
 }
 
 @media only screen and (max-width: 800px) {
   .banner-text-container {
     text-align: center;
-    max-width: 80%;
+    max-width: 100%;
     margin-top: 60px;
   }
 
@@ -50,13 +53,14 @@
 /* For screens wider than 800px (desktop) */
 @media only screen and (min-width: 801px) {
   .banner-text-container {
+    width: 90%;
     text-align: left; /* Adjust the alignment as needed */
-    max-width: 900px;
+    max-width: 100%;
     padding: 16px;
     position: absolute;
     top: 50%;
-    left: 10%;
-    transform: translateY(-50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   .banner-text-container h1 {
@@ -81,19 +85,3 @@
   opacity: 1;
   pointer-events: auto;
 }
-
-.particles-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
-
-#tsparticles {
-  height: 100vh;
-  width: 100vw;
-}
-
-/* Add your additional CSS rules here */
