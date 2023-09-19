@@ -1,4 +1,4 @@
-.banner-main-container {
+.fund-main-container {
   background-color: #f0f0f0;
   width: 100%;
   /* min-height: 100vh; */
@@ -10,7 +10,7 @@
   position: relative;
 }
 
-.banner-text-container {
+.fund-text-container {
   max-width: 100%;
   color: #000;
   text-align: center;
@@ -19,14 +19,14 @@
   position: absolute; /* Add this line */
 }
 
-.banner-text-container h1 {
+.fund-text-container h1 {
   font-size: 5rem;
   font-weight: bold;
   text-align: center;
   margin-bottom: 24px;
 }
 
-.banner-text-container h5 {
+.fund-text-container h5 {
   font-weight: normal;
   line-height: 28px;
   font-size: 22px;
@@ -34,17 +34,17 @@
 }
 
 @media only screen and (max-width: 800px) {
-  .banner-text-container {
+  .fund-text-container {
     text-align: center;
     max-width: 100%;
     margin-top: 60px;
   }
 
-  .banner-text-container h1 {
+  .fund-text-container h1 {
     font-size: 3rem;
   }
 
-  .banner-text-container h5 {
+  .fund-text-container h5 {
     font-size: 16px;
     line-height: 24px;
   }
@@ -52,7 +52,7 @@
 
 /* For screens wider than 800px (desktop) */
 @media only screen and (min-width: 801px) {
-  .banner-text-container {
+  .fund-text-container {
     width: 90%;
     text-align: left; /* Adjust the alignment as needed */
     max-width: 100%;
@@ -63,11 +63,11 @@
     transform: translate(-50%, -50%);
   }
 
-  .banner-text-container h1 {
+  .fund-text-container h1 {
     font-size: 4.5rem;
   }
 
-  .banner-text-container h5 {
+  .fund-text-container h5 {
     font-size: 18px;
     line-height: 28px;
   }

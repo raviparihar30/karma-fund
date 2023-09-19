@@ -11,7 +11,7 @@ function About() {
           <Slide direction="left">
             <div className="about-text">
               <h2>
-                <span className="text-danger">About</span> Us
+                <span className="text-success">About</span> Us
               </h2>
               <p>
                 We provide timely and insightful research and commentary on the

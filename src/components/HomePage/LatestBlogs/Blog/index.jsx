@@ -17,12 +17,7 @@ const Blog = ({ title, subTitle, image, user = {}, updatedAt, id, likes }) => {
   const formattedDate = dayjs(updatedAt).format("MMMM D, YYYY");
 
   return (
-    <div
-      className="blog-card h-100"
-      onClick={() =>
-        loggedInUser ? navigate(`/blog/${id}`) : navigate(`signin?blog=${id}`)
-      }
-    >
+    <div className="blog-card h-100" onClick={() => navigate(`/blog/${id}`)}>
       <div className="blog-image-container h-100">
         <img className="blog-image h-100" src={image} alt="Blog" />
       </div>

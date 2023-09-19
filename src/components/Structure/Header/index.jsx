@@ -8,7 +8,7 @@ import "./index.m.css"; // Import your custom CSS file
 
 import { UserContext } from "../../../context/user";
 
-export default function Header({ padding = "px-5 py-4", hide }) {
+export default function Header({ padding = "p-3", hide }) {
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
   const { loggedInUser, setLoggedInUser } = useContext(UserContext);
   const [scrollHeaderBg, setScrollHeaderBg] = useState(false);
@@ -87,13 +87,15 @@ export default function Header({ padding = "px-5 py-4", hide }) {
       }`}
     >
       <div className="container head">
-        {/* <Navbar.Brand href="/" className="fw-bold text-center">
-          Karma Returns
-          <br />
-          <small className="logo-subtext">
-            MARKET NEUTRAL DIGITALASSETS FUND
-          </small>
-        </Navbar.Brand> */}
+        <Navbar.Brand href="/" className="fw-bold text-center">
+          <img
+            src="/images/logo.png"
+            style={{
+              width: "300px",
+              height: "110px",
+            }}
+          />
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
         <Navbar.Collapse className="justify-content-end" id="basic-navbar-nav">
@@ -175,6 +177,7 @@ export default function Header({ padding = "px-5 py-4", hide }) {
                     e.preventDefault();
                     scrollToSection("blogs");
                   }}
+                  className="fw-bold"
                 >
                   Blogs
                 </NavDropdown.Item>
@@ -212,8 +215,8 @@ export default function Header({ padding = "px-5 py-4", hide }) {
                 </Dropdown>
               ) : (
                 <>
-                  <Nav.Link href="/signin" className="text-dark">
-                    Sign In
+                  <Nav.Link href="/signin" className="text-dark w-25">
+                    Signin
                   </Nav.Link>
                   <Nav.Link href="/register" className="text-dark">
                     Register

@@ -25,7 +25,7 @@ const RegisterForm = () => {
         Swal.fire({
           icon: "success",
           title: "Success",
-          text: "Register Successful",
+          text: "Registered successfully",
         });
       } else {
         Swal.fire({

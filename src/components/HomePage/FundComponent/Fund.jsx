@@ -4,14 +4,14 @@ import { motion } from "framer-motion";
 const FundComponent = () => {
   return (
     <div>
-      <div className="banner-text-container">
+      <div className="fund-text-container">
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="animate__animated animate__fadeInDown"
         >
-          The <span className="text-danger">Karma</span> Fund
+          The <span className="text-success">Karma</span> Fund
         </motion.h1>
         <motion.h5
           initial={{ opacity: 0, y: 20 }}

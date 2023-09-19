@@ -91,7 +91,7 @@ const Banner = () => {
           transition={{ duration: 0.5 }}
           className="animate__animated animate__fadeInDown"
         >
-          <span className="text-danger">Karma</span> Returns Digital Assets
+          <span className="text-success">Karma</span> Returns Digital Assets
         </motion.h1>
         <motion.h5
           initial={{ opacity: 0, y: 20 }}

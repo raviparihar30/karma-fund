@@ -11,7 +11,7 @@ const MainLayout = ({ children, padding, hide = true, blogsRef, aboutRef }) => {
         blogsRef={blogsRef}
         aboutRef={aboutRef}
       />
-      {hide && <div style={{ height: "88px" }} />}
+      {/* {hide && <div style={{ height: "88px" }} />} */}
       {children}
       <Footer />
     </Container>
