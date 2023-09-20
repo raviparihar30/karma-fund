@@ -1,6 +1,6 @@
 /* ReadMorePage.css */
 .read-more-page {
-  max-width: 40%;
+  max-width: 800px;
   margin: 32px auto;
   padding: 20px;
   font-family: Arial, sans-serif;
@@ -74,8 +74,8 @@
 .author-info {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  margin-top: 10px;
+  justify-content: flex-start;
+  margin-bottom: 10px;
 }
 
 .author-info .MuiAvatar-root {

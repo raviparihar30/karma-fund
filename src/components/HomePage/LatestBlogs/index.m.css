@@ -1,5 +1,5 @@
 .blog-container h1 {
-  font-size: 80px;
+  font-size: 48px;
   line-height: 1;
   letter-spacing: -0.01em;
   font-family: Cabinet Grotesk, sans-serif;
@@ -8,6 +8,6 @@
 
 .blog-container {
   padding: 80px 0;
-  background-image: linear-gradient(to bottom, #fff, #5c7490);
+  background-image: linear-gradient(to bottom, #fff, #fff);
   color: #000;
 }

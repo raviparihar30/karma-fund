@@ -2,7 +2,7 @@
 .contact-section {
   padding: 36px 0 70px 0;
   /* background-color: #000; */
-  background-image: linear-gradient(to top, #5c7490, #fff);
+  background-image: linear-gradient(to top, #fff, #fff);
 }
 
 .contact-points {
@@ -16,7 +16,7 @@
   background-color: #000;
 }
 .contact-section .heading {
-  font-size: 80px;
+  font-size: 48px;
   color: #000;
 }
 @media (max-width: 878px) {

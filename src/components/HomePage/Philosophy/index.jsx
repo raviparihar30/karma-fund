@@ -14,7 +14,7 @@ function Philosophy() {
             }}
           >
             <h1 className="mb-4">
-              OUR <span className="text-green-custom">PHILOSOPHY</span>
+              Our <span className="text-green-custom">Philosophy</span>
             </h1>
             <ul>
               <Reveal className="fade-in">
@@ -64,15 +64,6 @@ function Philosophy() {
                   Comfort with periods of fiat performance as we dont expect to
                   get the best odds most times. Those periods and opportunities
                   are there, but patience is key.
-                </p>
-              </div>
-              <div className="part-square">
-                <p>
-                  Return profiles that enable us to generate 35-70% gross
-                  returns and compound that for years. Again this cannot come at
-                  the expense of existential risk hence once that is out of the
-                  picture, we. try to generate returns from what the market
-                  gives us
                 </p>
               </div>
               <div className="part-square">

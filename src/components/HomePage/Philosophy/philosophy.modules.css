@@ -4,11 +4,11 @@
 }
 
 .dark-background {
-  background-image: linear-gradient(to bottom, #fff, #5c7490);
+  background-image: linear-gradient(to bottom, #fff, #fff);
   color: #000;
 }
 .philosophy-content h1 {
-  font-size: 80px;
+  font-size: 48px;
   font-weight: bold;
 }
 
@@ -72,7 +72,7 @@ p {
 }
 
 .philosophy-content li {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.6;
   margin-bottom: 20px;
   color: #000; /* Lighter text color for better contrast */

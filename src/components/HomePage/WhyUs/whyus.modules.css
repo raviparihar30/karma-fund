@@ -2,7 +2,7 @@
 .whyus-section {
   padding: 36px 0 140px 0;
   /* background-color: #000; */
-  background-image: linear-gradient(to top, #fff, #5c7490);
+  background-image: linear-gradient(to top, #fff, #fff);
 }
 
 .whyus-points {
@@ -13,7 +13,7 @@
   margin-top: 40px;
 }
 .whyus-section h2 {
-  font-size: 80px;
+  font-size: 48px;
   color: #000;
 }
 @media (max-width: 878px) {

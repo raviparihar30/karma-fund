@@ -8,6 +8,7 @@ import { BASE_URL, imageUrl, postRequest } from "../../apis";
 import { Avatar } from "@mui/material";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import TelegramIcon from "@mui/icons-material/Telegram";
 
 const BlogPage = () => {
   const { blogId } = useParams();
@@ -48,11 +49,10 @@ const BlogPage = () => {
           "Loading..."
         ) : (
           <>
-            <h2 className={"blog-title"}>{blog.title}</h2>
             <div className="author-info">
               <div className="d-flex gap-1 align-items-center me-2">
                 <Avatar
-                  src={`${imageUrl}${author.profilePhoto}`}
+                  src={`/images/avatar.png`}
                   alt={author.name}
                   sx={{ width: 20, height: 20 }}
                 />
@@ -62,21 +62,32 @@ const BlogPage = () => {
               </div>{" "}
               <div className="author-social-links">
                 <a
-                  href={author.twitterLink}
+                  href={
+                    "https://twitter.com/i/flow/login?redirect_after_login=%2FShreyasChari"
+                  }
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <TwitterIcon />
                 </a>
                 <a
-                  href={author.linkedinLink}
+                  href={"https://www.linkedin.com/in/shreyas-chari-3b69bb1/"}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <LinkedInIcon />
                 </a>
+                <a
+                  href={"https://t.me/ShreyasC"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <TelegramIcon />
+                </a>
               </div>
             </div>
+            <h2 className={"blog-title"}>{blog.title}</h2>
+
             {blog.subtitle && (
               <p className={"blog-subtitle"}>{blog.subtitle}</p>
             )}
