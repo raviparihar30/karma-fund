@@ -11,7 +11,7 @@ const FundComponent = () => {
           transition={{ duration: 0.5 }}
           className="animate__animated animate__fadeInDown"
         >
-          The <span className="text-success">Karma</span> Fund
+          The <span className="text-green-custom">Karma</span> Fund
         </motion.h1>
         <motion.h5
           initial={{ opacity: 0, y: 20 }}

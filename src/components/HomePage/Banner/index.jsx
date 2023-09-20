@@ -91,19 +91,27 @@ const Banner = () => {
           transition={{ duration: 0.5 }}
           className="animate__animated animate__fadeInDown"
         >
-          <span className="text-success">Karma</span> Digital Assets
+          <span className="text-green-custom">Karma</span> Digital Assets
         </motion.h1>
-        <motion.h5
+        <motion.h4
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.5 }}
           className="animate__animated animate__fadeInUp"
         >
           A market neutral approach in digital assets to create volatility
-          minimized returns. Karma employs its experience of more than 25 years
-          in traditional derivatives markets in crypto markets deploying
-          institutional grade systems and risk management to create robust
-          portfolios and generate returns regardless of market direction
+          minimized returns.
+        </motion.h4>
+        <motion.h5
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          className="animate__animated animate__fadeInUp"
+        >
+          Karma employs its experience of more than 25 years in traditional
+          derivatives markets in crypto markets deploying institutional grade
+          systems and risk management to create robust portfolios and generate
+          returns regardless of market direction
         </motion.h5>
       </div>
     </div>

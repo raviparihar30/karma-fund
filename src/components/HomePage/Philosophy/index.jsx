@@ -14,7 +14,7 @@ function Philosophy() {
             }}
           >
             <h1 className="mb-4">
-              OUR <span className="text-success">PHILOSOPHY</span>
+              OUR <span className="text-green-custom">PHILOSOPHY</span>
             </h1>
             <ul>
               <Reveal className="fade-in">

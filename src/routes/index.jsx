@@ -7,6 +7,7 @@ import AboutPage from "../pages/AboutPage";
 import BlogPage from "../pages/BlogPage";
 import ContactPage from "../pages/ContactPage";
 import FundPage from "../pages/FundPage";
+import "./route.m.css";
 
 export const AllRoutes = () => (
   <Routes>

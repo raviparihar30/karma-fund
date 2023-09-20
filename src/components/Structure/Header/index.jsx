@@ -37,7 +37,7 @@ export default function Header({ padding = "p-3", hide }) {
   useEffect(() => {
     const handleResize = () => {
       const { innerWidth } = window;
-      setIsMobile(innerWidth < 576 || innerWidth < 992);
+      setIsMobile(innerWidth < 576 || innerWidth < 753);
       const navbarBgColor = isMobile ? "secondary" : "transparent";
       setScrollHeaderBg(navbarBgColor === "dark");
     };
@@ -76,12 +76,12 @@ export default function Header({ padding = "p-3", hide }) {
             ? isNavbarOpen
               ? "secondary"
               : scrollHeaderBg
-              ? "light"
+              ? "transparent"
               : "transparent"
-            : "light"
+            : "transparent"
         }
         variant="light"
-        expand="lg"
+        expand="md"
         onToggle={handleNavbarToggle}
         className={`w-100 ${padding} d-flex justify-content-between align-items-center z-1 header-wrapper ${
           scrollHeaderBg ? "scroll-header-bg" : ""
@@ -89,135 +89,165 @@ export default function Header({ padding = "p-3", hide }) {
       >
         <div className="container head">
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
-
+          {!isMobile && (
+            <Navbar.Collapse
+              id="basic-navbar-nav"
+              style={{
+                marginLeft: "124px",
+              }}
+              className="justify-content-start ps-4 mt-3"
+            >
+              <div className="d-flex align-items-center text-dark justify-content-between">
+                <Nav className="mx-auto gap-3 fw-bold align-items-start justify-content-start d-flex">
+                  {/* <div> */}
+                  <div className="d-flex flex-md-row flex-column gap-4">
+                    <Nav.Link href="/" className="text-dark">
+                      Home
+                    </Nav.Link>
+                    <Nav.Link href="/fund" className="text-dark">
+                      Fund
+                    </Nav.Link>
+                  </div>
+                  {/* </div> */}
+                </Nav>
+              </div>
+            </Navbar.Collapse>
+          )}
           <Navbar.Collapse
-            className="justify-content-end"
             id="basic-navbar-nav"
+            className="justify-content-end mt-3"
+            style={{
+              marginRight: !isMobile ? "124px" : "0",
+            }}
           >
-            <div className="d-flex align-items-center text-dark">
-              <Nav className="ml-auto gap-3 fw-bold align-items-center">
-                <Nav.Link href="/" className="text-dark">
-                  Home
-                </Nav.Link>
-                <Nav.Link href="/fund" className="text-dark">
-                  Fund
-                </Nav.Link>
-                <NavDropdown
-                  title="Company"
-                  className="text-dark"
-                  id="company-dropdown"
-                >
-                  {isHomePage ? (
-                    <Link
-                      to="aboutSection"
-                      className="text-dark"
-                      smooth={true}
-                      duration={500}
-                    >
-                      <NavDropdown.Item className="text-dark">
-                        About
-                      </NavDropdown.Item>
-                    </Link>
-                  ) : (
-                    <NavDropdown.Item
-                      href="#"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        scrollToSection("about");
-                      }}
-                    >
-                      About
-                    </NavDropdown.Item>
-                  )}
-                  {isHomePage ? (
-                    <Link to="philosophySection" smooth={true} duration={500}>
-                      <NavDropdown.Item>Philosophy</NavDropdown.Item>
-                    </Link>
-                  ) : (
-                    <NavDropdown.Item
-                      href="#"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        scrollToSection("philosophy");
-                      }}
-                    >
-                      Philosophy
-                    </NavDropdown.Item>
-                  )}
-
-                  {isHomePage ? (
-                    <Link to="contactSection" smooth={true} duration={500}>
-                      <NavDropdown.Item>Contact</NavDropdown.Item>
-                    </Link>
-                  ) : (
-                    <NavDropdown.Item
-                      href="#"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        scrollToSection("contact");
-                      }}
-                    >
-                      Contact
-                    </NavDropdown.Item>
-                  )}
-                </NavDropdown>
-                {isHomePage ? (
-                  <Link to="blogsSection" smooth={true} duration={500}>
-                    <Nav.Link href="/blogs">Blogs</Nav.Link>
-                  </Link>
-                ) : (
-                  <NavDropdown.Item
-                    href="#"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      scrollToSection("blogs");
-                    }}
-                    className="fw-bold"
-                  >
-                    Blogs
-                  </NavDropdown.Item>
+            <div className="d-flex align-items-center text-dark justify-content-between">
+              <Nav className="ms-2 gap-3 fw-bold align-items-start justify-content-end d-flex">
+                {/* <div> */}
+                {isMobile && (
+                  <div className="d-flex flex-md-row flex-column gap-4">
+                    <Nav.Link href="/" className="text-dark">
+                      Home
+                    </Nav.Link>
+                    <Nav.Link href="/fund" className="text-dark">
+                      Fund
+                    </Nav.Link>
+                  </div>
                 )}
-
-                {loggedInUser ? (
-                  <Dropdown align="end">
-                    <Dropdown.Toggle
-                      variant="link"
-                      className="text-dark d-flex align-items-center gap-2"
-                      id="user-dropdown-toggle"
-                    >
-                      <Avatar
-                        src={loggedInUser.avatarUrl}
-                        alt={loggedInUser.name}
-                        className="mr-2"
-                      />
-                      {loggedInUser.name &&
-                        capitalizeFirstLetter(loggedInUser.name)}
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                      <Dropdown.Item href="#">My Account</Dropdown.Item>
-                      <Dropdown.Divider />
-                      <Dropdown.Item
+                <div className="d-flex flex-md-row flex-column gap-4">
+                  <NavDropdown
+                    title="Company"
+                    className="text-dark"
+                    id="company-dropdown"
+                  >
+                    {isHomePage ? (
+                      <Link
+                        to="aboutSection"
+                        className="text-dark"
+                        smooth={true}
+                        duration={500}
+                      >
+                        <NavDropdown.Item className="text-dark">
+                          About
+                        </NavDropdown.Item>
+                      </Link>
+                    ) : (
+                      <NavDropdown.Item
                         href="#"
-                        onClick={() => {
-                          localStorage.removeItem("rn-user");
-                          localStorage.removeItem("token");
-                          setLoggedInUser(false);
+                        onClick={(e) => {
+                          e.preventDefault();
+                          scrollToSection("about");
                         }}
                       >
-                        Log Out
-                      </Dropdown.Item>
-                    </Dropdown.Menu>
-                  </Dropdown>
-                ) : (
-                  <>
-                    <Nav.Link href="/signin" className="text-dark w-25">
-                      Signin
-                    </Nav.Link>
-                    <Nav.Link href="/register" className="text-dark">
-                      Register
-                    </Nav.Link>
-                  </>
-                )}
+                        About
+                      </NavDropdown.Item>
+                    )}
+                    {isHomePage ? (
+                      <Link to="philosophySection" smooth={true} duration={500}>
+                        <NavDropdown.Item>Philosophy</NavDropdown.Item>
+                      </Link>
+                    ) : (
+                      <NavDropdown.Item
+                        href="#"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          scrollToSection("philosophy");
+                        }}
+                      >
+                        Philosophy
+                      </NavDropdown.Item>
+                    )}
+
+                    {isHomePage ? (
+                      <Link to="contactSection" smooth={true} duration={500}>
+                        <NavDropdown.Item>Contact</NavDropdown.Item>
+                      </Link>
+                    ) : (
+                      <NavDropdown.Item
+                        href="#"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          scrollToSection("contact");
+                        }}
+                      >
+                        Contact
+                      </NavDropdown.Item>
+                    )}
+                    {isHomePage ? (
+                      <Link to="blogsSection" smooth={true} duration={500}>
+                        <NavDropdown.Item>Blogs</NavDropdown.Item>
+                      </Link>
+                    ) : (
+                      <NavDropdown.Item
+                        href="#"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          scrollToSection("blogs");
+                        }}
+                      >
+                        Blogs
+                      </NavDropdown.Item>
+                    )}
+                  </NavDropdown>
+
+                  {loggedInUser ? (
+                    <Dropdown align="end">
+                      <Dropdown.Toggle
+                        variant="link"
+                        className="text-dark d-flex align-items-center gap-2"
+                        id="user-dropdown-toggle"
+                      >
+                        <Avatar
+                          src={loggedInUser.avatarUrl}
+                          alt={loggedInUser.name}
+                          className="mr-2"
+                        />
+                        {loggedInUser.name &&
+                          capitalizeFirstLetter(loggedInUser.name)}
+                      </Dropdown.Toggle>
+                      <Dropdown.Menu>
+                        <Dropdown.Item href="#">My Account</Dropdown.Item>
+                        <Dropdown.Divider />
+                        <Dropdown.Item
+                          href="#"
+                          onClick={() => {
+                            localStorage.removeItem("rn-user");
+                            localStorage.removeItem("token");
+                            setLoggedInUser(false);
+                          }}
+                        >
+                          Log Out
+                        </Dropdown.Item>
+                      </Dropdown.Menu>
+                    </Dropdown>
+                  ) : (
+                    <>
+                      <Nav.Link href="/signin" className="text-dark w-25">
+                        Signin
+                      </Nav.Link>
+                    </>
+                  )}
+                </div>
+                {/* </div> */}
               </Nav>
             </div>
           </Navbar.Collapse>
@@ -233,6 +263,9 @@ export default function Header({ padding = "p-3", hide }) {
             width: "400px",
             height: "220px",
             paddingTop: "48px",
+            marginTop: isMobile ? 0 : "-160px",
+            marginBottom: isMobile ? 0 : "0",
+            zIndex: "111",
           }}
         />
       </Navbar.Brand>

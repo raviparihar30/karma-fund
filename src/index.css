@@ -9,3 +9,6 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.text-green-custom {
+  color: #245d2b !important;
+}

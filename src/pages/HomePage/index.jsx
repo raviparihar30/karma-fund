@@ -16,11 +16,7 @@ const HomePage = () => {
   const blogsRef = useRef(null);
 
   return (
-    <MainLayout
-      padding="position-absolute px-3 py-4"
-      hide={false}
-      blogsRef={blogsRef}
-    >
+    <MainLayout padding="px-3 py-4" hide={false} blogsRef={blogsRef}>
       <div className="banner-container position-relative">
         <Banner />
       </div>

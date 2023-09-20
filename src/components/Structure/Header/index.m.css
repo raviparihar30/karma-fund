@@ -10,7 +10,7 @@
 /* Apply the same styles to dropdown links as regular links */
 .header-wrapper.navbar-nav .nav-link,
 .header-wrapper.navbar-nav .nav-item.dropdown:hover .nav-link {
-  color: #000 !important;
+  color: #000000 !important;
   text-decoration: none;
   font-weight: bold;
 }
@@ -46,7 +46,8 @@
 }
 
 .head a {
-  color: #000 !important;
+  color: #245d2bbf !important;
+  font-size: 21px !important;
 }
 
 .head a:hover {

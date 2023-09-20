@@ -42,7 +42,7 @@ const BlogPage = () => {
   }, [blogId]);
 
   return (
-    <MainLayout>
+    <MainLayout padding="px-3 py-4">
       <div className={"read-more-page"}>
         {!blog ? (
           "Loading..."

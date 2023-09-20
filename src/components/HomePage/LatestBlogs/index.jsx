@@ -39,7 +39,7 @@ const LatestBlogs = () => {
         <div className="container">
           <Fade delay={10} cascade damping={1e-1}>
             <h1 className="mb-5 text-dark fw-bold">
-              Latest <span className="text-success">Blogs</span>
+              Latest <span className="text-green-custom">Blogs</span>
             </h1>
           </Fade>
           <Row className="my-5  py-5 rounded">

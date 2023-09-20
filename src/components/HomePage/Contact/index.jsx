@@ -14,7 +14,7 @@ function Contact() {
     <section id="why-us" className="contact-section">
       <div className="container">
         <h2 className="fw-bold heading">
-          Talk to <span className="text-success">Us</span>
+          Talk to <span className="text-green-custom">Us</span>
         </h2>
         <ContactForm />
       </div>
